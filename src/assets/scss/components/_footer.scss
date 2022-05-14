@@ -1,0 +1,63 @@
+@use "../variables/colors" as color;
+@use "../variables/fonts" as font;
+
+.container-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: color.$gray2;
+
+  font-family: font.$varela-round;
+
+  height: 350px;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+
+  .left-part,
+  .right-part {
+    display: flex;
+    width: 40%;
+  }
+
+  .left-part {
+    .planet {
+      word-wrap: break-word;
+      font-size: 2em;
+      width: 100%;
+    }
+
+    .description {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      p:nth-child(1),
+      p:nth-child(3) {
+        font-size: 1em;
+      }
+      p:nth-child(2) {
+        font-size: 2em;
+      }
+    }
+  }
+
+  .right-part {
+    flex-direction: column;
+    justify-content: space-around;
+
+    .names {
+      span {
+        margin-right: 8%;
+      }
+    }
+
+    img {
+      object-fit: cover;
+      width: 80%;
+      height: 182px;
+      border-radius: 12px;
+    }
+  }
+}
