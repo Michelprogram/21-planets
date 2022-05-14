@@ -1,0 +1,95 @@
+@use "../variables/colors" as color;
+@use "../variables/fonts" as font;
+
+$colors-balls: color.$purple, color.$green-light, color.$blue-light,
+  color.$pink-dark, color.$gray, color.$dark-blue;
+
+$i: 0;
+
+.container-header {
+  height: 410px;
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 50px;
+
+  background-color: color.$gray2;
+
+  font-family: font.$varela-round;
+
+  .navigation {
+    position: relative;
+
+    display: flex;
+    margin-left: 10%;
+    align-items: center;
+    width: 80%;
+    justify-content: space-between;
+
+    .title-middle {
+      font-size: 2.5em;
+      line-height: 80px;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      height: 1.5px;
+      bottom: 0px;
+      width: 100%;
+      background-color: color.$dark-blue;
+      border-radius: 50px;
+    }
+
+    .links {
+      display: inline-block;
+
+      &:hover {
+        .icons {
+          opacity: 1;
+        }
+      }
+
+      .icons {
+        opacity: 0;
+        transition: opacity 0.5s ease-in;
+      }
+    }
+  }
+
+  .container-balls {
+    display: flex;
+    justify-content: space-between;
+
+    width: 40%;
+    margin-left: 30%;
+
+    .ball {
+      $size: 50px;
+      width: $size;
+      height: $size;
+      border-radius: 50px;
+      cursor: pointer;
+
+      transition: all 0.5s ease-in;
+
+      &:hover {
+        transform: translateY(-10px);
+      }
+
+      @each $color in $colors-balls {
+        $i: $i + 1;
+        &:nth-child(#{$i}) {
+          background-color: $color;
+        }
+      }
+    }
+  }
+}
