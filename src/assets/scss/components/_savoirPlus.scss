@@ -1,0 +1,16 @@
+@use "../variables/colors" as color;
+
+.button-component {
+  padding: 20px;
+  width: 150px;
+  border-radius: 5px;
+  color: color.$white;
+  cursor: pointer;
+  box-shadow: -1px 1px 1px color.$dark-blue;
+  background-color: color.$blue-light;
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    box-shadow: -5px 5px 1px color.$dark-blue;
+  }
+}
