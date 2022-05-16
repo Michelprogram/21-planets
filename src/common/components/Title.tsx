@@ -1,11 +1,16 @@
+import ITitle from "../../interfaces/ITitle";
 
+const Title = ({ title, color }: ITitle) => {
 
-const Title = () =>{
+    const getColor = () =>{
+        return {backgroundColor: color}
+    }
 
+  return (
+    <div className="container-title">
+        <p>{title}<hr style={getColor()}/></p>
+    </div>
+  );
+};
 
-    return(
-        <h1>Mon titre</h1>
-    )
-}
-
-export default Title
+export default Title;
