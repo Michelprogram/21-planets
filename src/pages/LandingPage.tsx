@@ -9,7 +9,6 @@ const LandingPage = () => {
     return (
         <div>
             <Header />
-            <p>Oui</p>
             <Footer />
         </div>
     );

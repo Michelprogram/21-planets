@@ -22,25 +22,38 @@
   }
 
   .left-part {
-    .planet {
-      word-wrap: break-word;
-      font-size: 2em;
-      width: 100%;
-    }
-
     .description {
       display: flex;
       flex-direction: column;
-      gap: 20px;
-
-      p:nth-child(1),
-      p:nth-child(3) {
-        font-size: 1em;
-      }
-      p:nth-child(2) {
+      justify-content: space-around;
+      margin-left: 3%;
+      .planet {
+        word-wrap: break-word;
         font-size: 2em;
+        width: 100%;
+      }
+
+      .buy {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        p:nth-child(1) {
+          font-size: 1.5em;
+        }
+        p:nth-child(2) {
+          font-size: 1em;
+        }
       }
     }
+  }
+
+  .middle-hr {
+    margin: auto;
+    height: 80%;
+    width: 2px;
+    background-color: color.$dark-blue;
   }
 
   .right-part {
