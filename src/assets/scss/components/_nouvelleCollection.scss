@@ -1,0 +1,88 @@
+@use "../variables/colors" as color;
+@use "../variables/fonts" as font;
+
+.container-new-collection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: font.$varela-round;
+  height: 600px;
+  border: 2px solid red;
+  background-color: color.$gray2;
+  gap: 10%;
+
+  .img-part {
+    .container-black {
+      position: relative;
+      width: 400px;
+      height: 250px;
+      background-color: color.$dark;
+
+      box-shadow: 55px -55px color.$white;
+
+      img {
+        position: absolute;
+        width: 95px;
+        height: 95px;
+      }
+
+      .neptune {
+        top: 5%;
+        left: 5%;
+      }
+
+      .saturn {
+        top: 5%;
+        right: 25%;
+        transform: rotate(10deg);
+      }
+
+      .uranus {
+        bottom: 10%;
+        left: 25%;
+        transform: rotate(102deg);
+      }
+
+      .vapowave {
+        bottom: 10%;
+        right: 5%;
+      }
+    }
+  }
+
+  .text-container {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 250px;
+    p:nth-child(1) {
+      font-size: 2em;
+    }
+    p:nth-child(2) {
+      font-size: 1.2em;
+    }
+    p:nth-child(3) {
+      font-size: 1em;
+      opacity: 0.5;
+      font-style: italic;
+    }
+
+    .auteurs {
+      font-size: 1em;
+      display: inline-flex;
+      align-items: baseline;
+
+      gap: 10px;
+
+      div {
+        width: 25px;
+        height: 25px;
+        content: "";
+        border-radius: 100px;
+        background-color: color.$dark-blue;
+      }
+    }
+  }
+}
