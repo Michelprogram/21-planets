@@ -4,10 +4,12 @@ import Header from "../common/components/Header"
 import Title from "../common/components/Title"
 
 const LandingPage = () => {
+    //<Header />
+    //<Title />
+    
     return (
         <div>
-                <Header />
-                <Title />
+               
             <ButtonViolet text="See More" link="/login"/>
         </div>
     );
