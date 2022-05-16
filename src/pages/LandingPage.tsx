@@ -1,11 +1,8 @@
 import React, { useContext } from 'react';
+import ButtonViolet from '../common/components/ButtonViolet';
 import Header from "../common/components/Header"
-import Footer from '../common/components/Footer';
-
 
 const LandingPage = () => {
-
-
     return (
         <div>
             <Header />
