@@ -3,6 +3,9 @@ import ButtonViolet from '../common/components/ButtonViolet';
 import Header from "../common/components/Header"
 
 const LandingPage = () => {
+    //<Header />
+    //<Title />
+    
     return (
         <div>
             <Header />
