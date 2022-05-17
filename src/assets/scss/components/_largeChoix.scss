@@ -1,8 +1,10 @@
+@use "../variables/colors" as color;
+
 .large_choix{
     padding: 50px;
     display: flex;
     justify-content: space-evenly;
-    background-color: white;
+    background-color: color.$gray2;
 
     .nouveaute_container{
         display: inline-block;

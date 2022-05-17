@@ -1,4 +1,6 @@
+@use "../variables/colors" as color;
+
 .prix_attractifs{
     text-align: center;
-    background-color: white;
+    background-color: color.$gray2;
 }
