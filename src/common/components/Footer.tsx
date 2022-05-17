@@ -1,4 +1,5 @@
 import Space from "../../assets/images/photos/VoieLactee2.webp"
+import ButtonXL from "./Button/ButtonXL"
 
 const Footer = () =>{
 
@@ -13,6 +14,7 @@ const Footer = () =>{
                     <div className="buy">
                         <p>Prêt à acheter</p>
                         <p>La première plateforme marchande de planètes au monde, crée pour satisfaire les passionés, les curieux et ceux qui voient en grand... </p>
+                        <ButtonXL link="/support" text="En savoir plus"/>
                     </div>
                 </div>
             </div>
