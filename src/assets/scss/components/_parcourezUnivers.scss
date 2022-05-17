@@ -1,0 +1,34 @@
+@use "../variables/colors" as color;
+@use "../variables/fonts" as font;
+
+.container-univers {
+  font-family: font.$varela-round;
+  background-color: color.$gray2;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2fr;
+  grid-column-gap: 41px;
+  grid-row-gap: 0px;
+  height: 600px;
+  align-items: center;
+  .img-part {
+    grid-area: 1 / 1 / 2 / 2;
+    height: 100%;
+    background-image: url("../../assets/images/photos/planete4.webp");
+    background-size: cover;
+  }
+
+  .text-part {
+    grid-area: 1 / 2 / 2 / 3;
+    .title {
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: 3%;
+    }
+
+    .description {
+      font-size: 1.2em;
+      margin-bottom: 3%;
+    }
+  }
+}
