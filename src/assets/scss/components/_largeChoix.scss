@@ -1,0 +1,19 @@
+.large_choix{
+    padding: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+
+    .nouveaute_container{
+        display: inline-block;
+    }
+    
+    .description_container{
+        display: inline-block;
+        width: 300px;
+
+        ul li{
+            list-style-type: disc;
+        }
+    }
+}
