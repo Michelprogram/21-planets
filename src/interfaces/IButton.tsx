@@ -1,4 +1,5 @@
-export default interface Button{
+export default interface IButton{
     link: string,
-    text: string
+    text: string,
+    className?: string
 }
