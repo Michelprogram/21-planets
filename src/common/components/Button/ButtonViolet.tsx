@@ -1,10 +1,11 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import IButton from "../../../interfaces/IButton";
 
-const ButtonViolet = (props:any) =>{
+const ButtonViolet = ({link, text}: IButton) =>{
     return(
-        <Link to={props.link}>
-            <li> <button type="button" className='button_purple'>{props.text}</button></li>    
+        <Link to={link}>
+            <li> <button type="button" className='button_purple'>{text}</button></li>    
         </Link>
     )
 }
