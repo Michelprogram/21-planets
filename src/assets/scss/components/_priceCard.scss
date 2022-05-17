@@ -1,0 +1,29 @@
+.price_card{
+    display: inline-block;
+    background-color: white;
+    position: relative;
+    width: 270px;
+    height: 420px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+
+    img{
+        width: 80px;
+        height: 80px;
+    }
+
+    ul li, p{
+        list-style-type: disc;
+        //margin: 10px;
+        color: grey;
+    }
+
+    #discover_button{
+        position: absolute;
+        bottom: 30px;
+    }
+}
