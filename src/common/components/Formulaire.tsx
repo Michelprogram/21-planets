@@ -1,9 +1,10 @@
 import { Form, Input, Button, Checkbox } from 'antd';
 import React, { useState } from 'react';
-import ButtonBlue from './Button/ButtonBlue';
-//import 'antd/dist/antd.css';
+import IFormulaire from '../../interfaces/IFormulaire';
+import ButtonXL from './Button/ButtonXL';
 
-const Demo = () => {
+const Formulaire = ({titre, submitText, submitTarget}: IFormulaire) => {
+
   const onFinish = (values:any) => {
     console.log('Success:', values);
   };
@@ -14,7 +15,7 @@ const Demo = () => {
 
   return (
     <div className='formulaire_container'>
-        <h2>On vous connait déjà ?</h2>
+        <h2>{titre}</h2>
         <br />
         <Form
         name="basic"
@@ -31,6 +32,8 @@ const Demo = () => {
         onFinishFailed={onFinishFailed}
         autoComplete="off"
         >
+
+        <div className='form_content'>
         <Form.Item
             name="username"
             required tooltip="Champ obligatoire"
@@ -69,6 +72,7 @@ const Demo = () => {
         >
             <Checkbox>Se souvenir de moi</Checkbox>
         </Form.Item>
+        </div>
 
         <br />
         <Form.Item
@@ -77,12 +81,11 @@ const Demo = () => {
             span: 16,
             }}
         >
-
-        <ButtonBlue text='Envoyez' link='/login' submit/>
+            <ButtonXL text={submitText} link={submitTarget} submit/>
         </Form.Item>
         </Form>
     </div>
   );
 };
 
-export default Demo;
+export default Formulaire;

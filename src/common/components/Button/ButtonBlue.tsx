@@ -5,7 +5,7 @@ import IButton from '../../../interfaces/IButton';
 const ButtonBlue = ({link, text, submit} : IButton) =>{
     return(
         <div>
-        { submit ? <input type="submit" value={text} formAction={link} className='button_blue' /> :
+        { submit ? <button type="submit" formAction={link} className='button_blue'>{text}</button> :
             <Link to={link}>
             <li> <button type="button" className='button_blue'>{text}</button></li>    
             </Link>
