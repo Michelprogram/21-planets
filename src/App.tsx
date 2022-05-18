@@ -8,6 +8,7 @@ import Home from "./pages/Landing"
 import Shop from './pages/Shop';
 import Panier from "./pages/Panier"
 import Login from "./pages/Login"
+import About from "./pages/About"
 
 import Header from './common/components/Header';
 import Footer from './common/components/Footer';
@@ -18,9 +19,10 @@ function App() {
         <Header />
         <Routes>
           <Route path={"/"} element={<Home />} />
-          <Route path={"/login"} element={<Login/>} />
+          <Route path={"/login"} element={<Login />} />
           <Route path={"/shop"} element={<Shop />} />
           <Route path={"/panier"} element={<Panier />} />
+          <Route path={"/about"} element={<About />} />
         </Routes>
         <Footer />
     </BrowserRouter>

@@ -11,9 +11,11 @@ const PrixAttractifs = ({className=''}) => {
             <h4><q>Qui aurait cru qu’on pouvait aller si haut en dépensant si peu ?</q> - Gaspard, probablement</h4>
 
             <br /><br />
-            <PriceCard logo="redGiants.svg" price="50 000 €" title="Le pack de deux géantes rouges" elements={['Aldébaran (Taureau)','Beltégeuse (Orion)']} link="/login"/>
-            <PriceCard logo="saturn.svg" price="100 000 €" title="Saturne et ses anneaux" elements={['Des centaines de coloris disponibles','Mode holographique inclu']} link="/login"/>
-            <PriceCard logo="blackHole.svg" price="5 200 000 000 €" title="3 trous noirs (2 + 1 gratuit)" elements={['Q0906+6930','Cygnus X-1','Le troisième au choix parmi des centaines de modèles']} link="/login"/>
+            <div className='price_cards'>
+                <PriceCard logo="redGiants.svg" price="50 000 €" title="Le pack de deux géantes rouges" elements={['Aldébaran (Taureau)','Beltégeuse (Orion)']} link="/login"/>
+                <PriceCard logo="saturn.svg" price="100 000 €" title="Saturne et ses anneaux" elements={['Des centaines de coloris disponibles','Mode holographique inclu']} link="/login"/>
+                <PriceCard logo="blackHole.svg" price="5 200 000 000 €" title="3 trous noirs (2 + 1 gratuit)" elements={['Q0906+6930','Cygnus X-1','Le troisième au choix parmi des centaines de modèles']} link="/login"/>
+            </div>
         </div>
     );
 };
