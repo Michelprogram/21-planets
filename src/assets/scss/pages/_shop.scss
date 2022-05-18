@@ -1,0 +1,8 @@
+@use "../variables/space" as space;
+
+.shop- {
+  &propositions,
+  &post-bottom {
+    margin: space.$little;
+  }
+}
