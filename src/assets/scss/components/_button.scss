@@ -1,14 +1,12 @@
 @use "../variables/colors" as color;
 
-body {
-  //background-color: azure !important;
-}
-
-button {
+button, input[type=submit] {
   width: 200px;
   height: 60px;
   border-radius: 5px;
   transition: all 0.2s ease-in;
+  font-size: x-large;
+  cursor: pointer;
   letter-spacing: normal;
 }
 
