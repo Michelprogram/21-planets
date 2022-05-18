@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
+import setClassName from '../../utils/ClassName';
 import PriceCard from './Card/PriceCard';
 
-const PrixAttractifs = () => {
+const PrixAttractifs = ({className=''}) => {
     
     return (
-        <div className='prix_attractifs'>
+        <div className={setClassName('prix_attractifs',className)}>
             <h2>Des prix attractifs</h2>
             <br />
             <h4><q>Qui aurait cru qu’on pouvait aller si haut en dépensant si peu ?</q> - Gaspard, probablement</h4>

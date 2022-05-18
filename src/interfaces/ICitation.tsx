@@ -1,4 +1,5 @@
 export default interface Citation{
     citation: string,
-    auteur: string
+    auteur: string,
+    className?:string
 }

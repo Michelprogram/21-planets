@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import IFormulaire from '../../interfaces/IFormulaire';
 import ButtonXL from './Button/ButtonXL';
 
-const Formulaire = ({titre, submitText, submitTarget}: IFormulaire) => {
+const Formulaire = ({titre, submitText, submitTarget,className}: IFormulaire) => {
 
   const onFinish = (values:any) => {
     console.log('Success:', values);
@@ -14,7 +14,7 @@ const Formulaire = ({titre, submitText, submitTarget}: IFormulaire) => {
   };
 
   return (
-    <div className='formulaire_container'>
+    <div className={'formulaire_container '+className}>
         <h2>{titre}</h2>
         <br />
         <Form
