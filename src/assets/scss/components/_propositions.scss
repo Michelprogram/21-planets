@@ -1,0 +1,33 @@
+@use "../variables/colors" as color;
+@use "../variables/fonts" as font;
+
+.container-propositions {
+  display: flex;
+  flex-direction: column;
+  height: 700px;
+  background-color: color.$gray2;
+  align-items: center;
+  justify-content: space-around;
+
+  .text,
+  .quote {
+    text-align: center;
+  }
+
+  .title {
+    font-size: 2em;
+  }
+
+  .quote {
+    font-size: 1.3em;
+    font-style: italic;
+  }
+
+  .best-propositions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 0px;
+  }
+}
