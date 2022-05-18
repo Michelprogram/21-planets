@@ -8,7 +8,6 @@
 
   font-family: font.$varela-round;
   height: 600px;
-  border: 2px solid red;
   background-color: color.$gray2;
   gap: 10%;
 
@@ -35,13 +34,11 @@
       .saturn {
         top: 5%;
         right: 25%;
-        transform: rotate(10deg);
       }
 
       .uranus {
         bottom: 10%;
         left: 25%;
-        transform: rotate(102deg);
       }
 
       .vapowave {

@@ -2,10 +2,12 @@ import VaporWave from "../../assets/images/svg/vaporwave.svg"
 import Uranus from "../../assets/images/svg/uranus.svg"
 import Saturn from "../../assets/images/svg/saturn.svg"
 import Neptune from "../../assets/images/svg/neptune.svg"
+import setClassName from '../../utils/ClassName';
 
-const NouvelleCollection = () =>{
+
+const NouvelleCollection = ({className = ''}) =>{
     return(
-        <div className="container-new-collection">
+        <div className={setClassName('container-new-collection', className)}>
             <div className="img-part">
                 <div className="container-black">
                     <img className="vapowave" src={VaporWave} alt="" />
