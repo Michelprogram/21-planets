@@ -1,5 +1,3 @@
-import React, { useContext } from 'react';
-import PriceCard from './Card/PriceCard';
 import NouveauteCard from './Card/NouveauteCard';
 import setClassName from '../../utils/ClassName';
 
