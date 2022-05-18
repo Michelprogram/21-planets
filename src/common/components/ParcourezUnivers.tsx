@@ -1,11 +1,13 @@
 import React from 'react';
 import ButtonViolet from './Button/ButtonViolet';
 import Planete from "../../assets/images/photos/planete4.webp"
+import setClassName from '../../utils/ClassName';
 
-const ParcourezUnivers = () => {
+const ParcourezUnivers = ({className = ''}) => {
     return (
-        <div className='container-univers'>
+        <div className={setClassName('container-univers', className)}>
             <div className="img-part">
+                
             </div>
             <div className="text-part">
                 <p className="title">Parcourez l’univers</p>
