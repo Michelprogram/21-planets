@@ -1,8 +1,9 @@
 import React from 'react';
+import setClassName from '../../utils/ClassName';
 
-const Eclaircissement = () => {
+const Eclaircissement = ({className=''}) => {
     return (
-        <div className='container-eclaircissement'>
+        <div className={setClassName('container-eclaircissement',className)}>
             <p className="title">☄️ Besoin d’un éclaircissement ?</p>
             <div className="container-questions">
                 <p>Votre planète ne répond plus ?</p>

@@ -12,6 +12,7 @@ import About from "./pages/About"
 
 import Header from './common/components/Header';
 import Footer from './common/components/Footer';
+import Support from './pages/Support';
 function App() {
 
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path={"/shop"} element={<Shop />} />
           <Route path={"/panier"} element={<Panier />} />
           <Route path={"/about"} element={<About />} />
+          <Route path={"/support"} element={<Support />} />
         </Routes>
         <Footer />
     </BrowserRouter>
