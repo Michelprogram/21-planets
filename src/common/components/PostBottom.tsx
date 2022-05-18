@@ -1,10 +1,11 @@
 import React from 'react';
 import Planet from "../../assets/images/photos/planete1.webp"
 import Space from "../../assets/images/photos/VoieLactee2.webp"
+import setClassName from '../../utils/ClassName';
 
-const PostBottom = () => {
+const PostBottom = ({className = ""}) => {
     return (
-        <div className='container-post-bottom'>
+        <div className={setClassName('container-post-bottom',className)}>
             <div className="container-vitrine">
                 <div className="container-gazeuse">
                     <img src={Planet} className="background-planet"/>

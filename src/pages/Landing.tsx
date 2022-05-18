@@ -8,10 +8,8 @@ import NouvelleCollection from '../common/components/NouvelleCollection';
 const LandingPage = () => {
     return (
         <div>
-            <Header />
             <ParcourezUnivers className='landing-parcourez'/>
             <NouvelleCollection className='landing-collection'/>
-            <Footer />
         </div>
     );
 };
