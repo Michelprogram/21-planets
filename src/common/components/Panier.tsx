@@ -4,8 +4,8 @@ import IFakeData from '../../interfaces/IFakeData';
 import Articles from './Card/Articles';
 
 import fakesData from '../../constants/fakeData';
-
-const Panier = () => {
+import setClassName from '../../utils/ClassName';
+const Panier = ({className = ""}) => {
 
     const [fakeData, setFakeData] = useState<Array<IFakeData>>(fakesData)
 
@@ -30,7 +30,7 @@ const Panier = () => {
     }
 
     return (
-        <div className='container-panier'>
+        <div className={setClassName('container-panier',className)}>
             <div className="container-grid">
                 <div className="price-list">
                     <div className="container-articles" style={heightValue()}>
