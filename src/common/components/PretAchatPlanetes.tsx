@@ -1,9 +1,10 @@
 import React from 'react';
+import setClassName from '../../utils/ClassName';
 import ButtonBlue from './Button/ButtonBlue';
 
-const PretAchatPlanetes = () =>{
+const PretAchatPlanetes = ({className=''}) =>{
     return(
-        <div className="pret_achat_container">
+        <div className={setClassName("pret_achat_container",className)}>
            <h3>Prêt à acheter des planètes ?*</h3>
             <br />
             <p>*Tout achat en dehors de notre système solaire n'est pas remboursable. Pour toute plainte, s'addresser à notre avocat.</p>

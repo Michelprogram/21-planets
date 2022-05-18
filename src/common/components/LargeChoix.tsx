@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import PriceCard from './Card/PriceCard';
 import NouveauteCard from './Card/NouveauteCard';
+import setClassName from '../../utils/ClassName';
 
-const LargeChoix = () => {
+const LargeChoix = ({className=''}) => {
     return (
-        <div className='large_choix'>
+        <div className={setClassName('large_choix',className)}>
 
             <div className='nouveaute_container'>
                 <NouveauteCard nouveaute='Pendant une période limitée, gravez votre prénom et celui d’un proche sur un achat de votre choix pour seulement 240 999 000 € !' link='/login'/>
