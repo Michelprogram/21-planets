@@ -1,5 +1,6 @@
 export default interface IButton{
     link: string,
     text: string,
-    className?: string
+    className?: string,
+    submit?: boolean
 }
