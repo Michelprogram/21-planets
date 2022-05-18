@@ -10,7 +10,7 @@ const PretAchatPlanetes = ({className=''}) =>{
             <p>*Tout achat en dehors de notre système solaire n'est pas remboursable. Pour toute plainte, s'addresser à notre avocat.</p>
             <br />
             <div id='acheter_button'>
-                <ButtonBlue text="Acheter" link="/login"/>
+                <ButtonBlue text="Acheter" link="/shop"/>
             </div>
         </div>
     );

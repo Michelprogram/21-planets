@@ -3,7 +3,7 @@ import ConnexionEnregistrement from "../common/components/ConnexionEnregistremen
 import PretAchatPlanetes from "../common/components/PretAchatPlanetes";
 
 const Login = () => {
-    const [connected, setConnected] = useState(false)
+    const [connected, setConnected] = useState(true)
     
     return (
         <div>
