@@ -11,9 +11,8 @@
     flex-direction: row;
 
     .separateur{
-        width: 3px;
-        height: 600px;
-        border: 1px solid gray;
-        background-color: gray;
+        height: 80%;
+        width: 2px;
+        background-color: color.$dark-blue;
     }
 }

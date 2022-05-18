@@ -4,6 +4,7 @@ import "./assets/scss/style.scss"
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Test"
+import Login from "./pages/Login"
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
 
         <Routes>
           <Route path={"/"} element={<Home />} />
+          <Route path={"/login"} element={<Login/>} />
         </Routes>
 
     </BrowserRouter>
