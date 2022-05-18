@@ -2,5 +2,15 @@
 
 .prix_attractifs{
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     background-color: color.$gray2;
+    height: 700px;
+
+    .price_cards{
+        display: flex;
+        justify-content: center;
+    }
 }
