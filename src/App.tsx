@@ -18,14 +18,14 @@ function App() {
   return (
     <BrowserRouter>
         <Header />
-        <Routes>
-          <Route path={"/"} element={<Home />} />
-          <Route path={"/login"} element={<Login />} />
-          <Route path={"/shop"} element={<Shop />} />
-          <Route path={"/panier"} element={<Panier />} />
-          <Route path={"/about"} element={<About />} />
-          <Route path={"/support"} element={<Support />} />
-        </Routes>
+          <Routes>
+            <Route path={"/"} element={<Home />} />
+            <Route path={"/login"} element={<Login />} />
+            <Route path={"/shop"} element={<Shop />} />
+            <Route path={"/panier"} element={<Panier />} />
+            <Route path={"/about"} element={<About />} />
+            <Route path={"/support"} element={<Support />} />
+          </Routes>
         <Footer />
     </BrowserRouter>
     

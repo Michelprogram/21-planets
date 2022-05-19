@@ -7,7 +7,7 @@ const Login = () => {
     
     return (
         <div>
-            {connected ? <PretAchatPlanetes className='bloc'/> : <ConnexionEnregistrement className='bloc'/>}
+            {connected ? <PretAchatPlanetes className='login'/> : <ConnexionEnregistrement className='login'/>}
             </div>
     );
 };
