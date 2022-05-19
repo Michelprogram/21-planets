@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ButtonViolet from './Button/ButtonViolet';
 import IFakeData from '../../interfaces/IFakeData';
 import Articles from './Card/Articles';
+import Plan from "../../assets/images/svg/master-plan.svg"
 
 import setClassName from '../../utils/ClassName';
 import usePanier from '../hooks/panier';
@@ -14,15 +15,28 @@ const Panier = ({className = ""}) => {
         return {height: 100*size()+"px"}
     }
 
+    const displayCart = () =>{
+        if(size() == 0){
+            return(
+                <div className="container-articles-empty">
+                    <img src={Plan} alt="" className='empty-cart'/>
+                </div>
+            )
+        } 
+        return (
+            <div className="container-articles" style={heightValue()}>
+                {
+                    panier.map((data:IFakeData, index: number)=> <Articles key={index} planete={data.planete} id={data.id}/>)
+                }
+            </div>
+        )
+    }
+
     return (
         <div className={setClassName('container-panier',className)}>
             <div className="container-grid">
                 <div className="price-list">
-                    <div className="container-articles" style={heightValue()}>
-                        {
-                            panier.map((data:IFakeData, index: number)=> <Articles key={index} planete={data.planete} id={data.id}/>)
-                        }
-                    </div>
+                    {displayCart()}
                 </div>
                 <div className="total">
                     <div className="container-inside">

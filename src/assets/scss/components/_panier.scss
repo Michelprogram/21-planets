@@ -25,6 +25,19 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+
+        &-empty {
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 520px;
+
+          .empty-cart {
+            height: 500px;
+            width: 100%;
+          }
+        }
       }
     }
 
