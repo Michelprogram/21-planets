@@ -48,6 +48,7 @@ $i: 0;
 
     .links {
       display: inline-block;
+      position: relative;
 
       &:hover {
         .icons {
@@ -58,6 +59,27 @@ $i: 0;
       .icons {
         opacity: 0;
         transition: opacity 0.5s ease-in;
+      }
+      .cart-info {
+        .size-info {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 25px;
+          height: 25px;
+          border-radius: 100px;
+          background-color: color.$pink-dark;
+          top: -15px;
+          color: color.$white;
+          left: -10px;
+          opacity: 0.25;
+          transition: opacity 0.3s ease-in;
+        }
+
+        &:hover > .size-info {
+          opacity: 0.75;
+        }
       }
     }
   }

@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import IFakeData from '../../../interfaces/IFakeData';
 
-import VaporWave from "../../../assets/images/svg/vaporwave.svg"
-import Uranus from "../../../assets/images/svg/uranus.svg"
-import Saturn from "../../../assets/images/svg/saturn.svg"
-import Neptune from "../../../assets/images/svg/neptune.svg"
-import Planete from "../../../assets/images/svg/planet.svg"
-import Pluto from "../../../assets/images/svg/pluto.svg"
-import Venus from "../../../assets/images/svg/venus.svg"
+import PlanetsSVG from "../../../constants/images"
 import { random } from '../../../utils/Random';
 
+import usePanier from '../../hooks/panier';
 
-const Articles = ({name, amount}: IFakeData) => {
+import Trash from "../../../assets/images/svg/trash.svg"
 
-    const [icons, _] = useState<Array<string>>([VaporWave, Uranus, Saturn, Neptune, Planete, Pluto, Venus])
+const Articles = ({id, planete}: IFakeData) => {
+
+    const [icons, _] = useState<Array<string>>(PlanetsSVG)
+
+    const {remove} = usePanier();
 
     const randomIcon = () :string =>{
         return icons[random(0, icons.length)]
@@ -22,8 +21,9 @@ const Articles = ({name, amount}: IFakeData) => {
     return (
         <div className='container-article'>
             <img src={randomIcon()} alt="" className="icon" />
-            <p className='name'>{name}</p>
-            <p className='amount'>{amount} $</p>
+            <p className='name'>{planete.name}</p>
+            <p className='amount'>{planete.amount} $</p>
+            <img className="trash" src={Trash} alt="" onClick={ () => remove(id) }/>
         </div>
     );
 };
