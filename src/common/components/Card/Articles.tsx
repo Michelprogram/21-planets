@@ -1,19 +1,13 @@
 import React, { useState } from 'react';
 import IFakeData from '../../../interfaces/IFakeData';
 
-import VaporWave from "../../../assets/images/svg/vaporwave.svg"
-import Uranus from "../../../assets/images/svg/uranus.svg"
-import Saturn from "../../../assets/images/svg/saturn.svg"
-import Neptune from "../../../assets/images/svg/neptune.svg"
-import Planete from "../../../assets/images/svg/planet.svg"
-import Pluto from "../../../assets/images/svg/pluto.svg"
-import Venus from "../../../assets/images/svg/venus.svg"
+import PlanetsSVG from "../../../constants/images"
 import { random } from '../../../utils/Random';
 
 
 const Articles = ({name, amount}: IFakeData) => {
 
-    const [icons, _] = useState<Array<string>>([VaporWave, Uranus, Saturn, Neptune, Planete, Pluto, Venus])
+    const [icons, _] = useState<Array<string>>(PlanetsSVG)
 
     const randomIcon = () :string =>{
         return icons[random(0, icons.length)]

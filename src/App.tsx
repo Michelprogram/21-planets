@@ -1,5 +1,3 @@
-
-import './assets/css/App.css'
 import "./assets/scss/style.scss"
 
 import { BrowserRouter, Routes } from 'react-router-dom';

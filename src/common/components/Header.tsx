@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import PlanetsSVG from "../../constants/images"
+import { random } from '../../utils/Random';
 
 const Header = () =>{
+
+    const setFavicon = ():void =>{
+        const favicon = document.getElementById('favicon') as HTMLAnchorElement | null
+        if (favicon != null){
+            favicon.href = PlanetsSVG[random(0, PlanetsSVG.length)]
+        }
+    }
+
+    useEffect(()=>setFavicon,[])
 
 
     return(
