@@ -1,0 +1,39 @@
+$large: 10%;
+$medium: 8%;
+$little: 5%;
+
+@mixin marginBetweenComponents($value) {
+  margin: $value 0% $value 0%;
+}
+
+//Landing
+
+.landing- {
+  &parcourez,
+  &collection {
+    @include marginBetweenComponents($medium);
+  }
+}
+
+//Login
+
+.login {
+  @include marginBetweenComponents($little);
+}
+
+//Panier
+
+.panier- {
+  &panier {
+    @include marginBetweenComponents($large);
+  }
+}
+
+//Shop
+
+.shop- {
+  &propositions,
+  &post-bottom {
+    @include marginBetweenComponents($little);
+  }
+}
