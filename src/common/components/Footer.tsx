@@ -1,4 +1,4 @@
-import Space from "../../assets/images/photos/VoieLactee2.webp"
+import Space from "../../assets/images/photos/voieLactee2.webp"
 import ButtonXL from "./Button/ButtonXL"
 
 const Footer = () =>{
