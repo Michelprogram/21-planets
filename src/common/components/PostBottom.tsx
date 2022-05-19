@@ -1,6 +1,6 @@
 import React from 'react';
 import Planet from "../../assets/images/photos/planete1.webp"
-import Space from "../../assets/images/photos/VoieLactee2.webp"
+import Space from "../../assets/images/photos/voieLactee2.webp"
 import setClassName from '../../utils/ClassName';
 
 const PostBottom = ({className = ""}) => {
