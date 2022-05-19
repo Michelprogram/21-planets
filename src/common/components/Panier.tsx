@@ -10,8 +10,6 @@ const Panier = ({className = ""}) => {
 
     const {panier, total, size, superficie, masse,dist, longest} = usePanier()
 
-    const [far, setFar] = useState("")
-
     const heightValue = () =>{
         return {height: 100*size()+"px"}
     }
@@ -38,7 +36,7 @@ const Panier = ({className = ""}) => {
                         <p className="title">Statistique</p>
                         <p className="superficie">Superficie total : <span>{superficie()} m3</span></p>
                         <p className="masse">Masse total : <span>{masse()} T</span></p>
-                        <p className="far">Planete la plus loin : <span>{longest().planete.name}</span></p>
+                        <p className="far">Planete la plus loin : <span>{size() > 1 ? longest().planete.name : ""}</span></p>
                         <p className="dist">Distance la plus loin : <span>{dist()} km</span></p>
                     </div>
                 </div>

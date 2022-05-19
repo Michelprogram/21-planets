@@ -24,18 +24,24 @@ const usePanier = () => {
   };
 
   const totalCost = (): number => {
+    if (panier.length < 1) return -1;
     return addPlanete<IFakeData>(panier, "amount");
   };
 
   const totalSuperficie = (): number => {
+    if (panier.length < 1) return 0;
     return addPlanete<IFakeData>(panier, "superficie");
   };
 
   const totalMasse = (): number => {
+    if (panier.length < 1) return 0;
+
     return addPlanete<IFakeData>(panier, "masse");
   };
 
   const longDist = (): number => {
+    if (panier.length < 1) return 0;
+
     return Math.max(
       ...panier.map((o: IFakeData) => o.planete.distanceFromEarth)
     );
