@@ -1,0 +1,22 @@
+@use "../variables/colors" as color;
+
+body {
+  //background-color: white !important;
+}
+.nouveaute_card {
+  position: relative;
+  width: 480px;
+  height: 360px;
+  border: 1px solid color.$dark-blue;
+  border-radius: 10px;
+  text-align: center;
+  font-size: large;
+  background-color: color.$dark-blue;
+  color: white;
+  padding: 30px;
+
+  #discover_button {
+    position: relative;
+    top: 25%;
+  }
+}

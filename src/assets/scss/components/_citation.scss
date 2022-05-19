@@ -1,0 +1,31 @@
+@use "../variables/colors" as color;
+
+.citation_container{
+    background-color: color.$gray2;
+    text-align: center;
+    width: auto;
+    height: 400px;
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    q{
+        font-weight: bold;
+        font-size:large;
+    }
+
+    .ball {
+        $size: 40px;
+        width: $size;
+        height: $size;
+        border-radius: 50px;
+        background-color: color.$green-light;
+    }
+
+    p{
+        font-style: italic;
+    }
+}

@@ -1,0 +1,48 @@
+@use "../variables/colors" as color;
+
+.formulaire_container{
+    background-color: transparent;
+    text-align: center;
+    width: 400px;
+    height: 500px;
+
+    display: flex;
+    justify-content:space-evenly;
+    flex-direction: column;
+    align-items: center;
+
+    h2{
+        margin-bottom: -40px;
+    }
+
+    p{
+        font-style: italic;
+    }
+
+    //messages d'erreurs
+    .ant-form-item-explain-error{
+        color: color.$pink-dark;
+        font-size: small;
+        font-style: italic;
+    }
+
+    .input{
+        width: 360px;
+        height: 40px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        font-size: medium;
+        transition: all 0.2s ease-in-out;
+        margin-top: 20px;
+
+        &:focus{
+            box-shadow: 0 0 3px color.$blue-light;
+        }
+
+        &:hover{
+            border: 2px solid color.$blue-light;
+        }
+    }
+
+
+}

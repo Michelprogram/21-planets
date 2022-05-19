@@ -1,0 +1,39 @@
+@use "../variables/colors" as color;
+
+.pret_achat_container{
+    background-color: color.$gray2;
+    text-align: center;
+    width: auto;
+    height: 500px;
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    p{
+        font-style: italic;
+    }
+}
+
+.pret_achat_2_container{
+    background-color: color.$gray2;
+    text-align: center;
+    width: auto;
+    height: 240px;
+    padding: 10px;
+    font-size: x-large;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+
+    .buttons{
+        width: 450px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

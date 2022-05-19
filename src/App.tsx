@@ -2,19 +2,24 @@
 import './assets/css/App.css'
 import "./assets/scss/style.scss"
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from "./pages/LandingPage"
+import { BrowserRouter, Routes } from 'react-router-dom';
+
+import Header from './common/components/Header';
+import Footer from './common/components/Footer';
+
+import DefaultRoute from "./routes/default"
 
 function App() {
 
   return (
     <BrowserRouter>
-
-        <Routes>
-          <Route path={"/"} element={<Home />} />
-        </Routes>
-
+        <Header />
+          <Routes>
+            {DefaultRoute}
+          </Routes>
+        <Footer />
     </BrowserRouter>
+    
   );
 }
 
