@@ -7,7 +7,7 @@ import { random } from '../../../utils/Random';
 import { DeleteOutlined} from '@ant-design/icons';
 import usePanier from '../../hooks/panier';
 
-const Articles = ({name, amount, id}: IFakeData) => {
+const Articles = ({id, planete}: IFakeData) => {
 
     const [icons, _] = useState<Array<string>>(PlanetsSVG)
 
@@ -20,8 +20,8 @@ const Articles = ({name, amount, id}: IFakeData) => {
     return (
         <div className='container-article'>
             <img src={randomIcon()} alt="" className="icon" />
-            <p className='name'>{name}</p>
-            <p className='amount'>{amount} $</p>
+            <p className='name'>{planete.name}</p>
+            <p className='amount'>{planete.amount} $</p>
             <DeleteOutlined onClick={ () => remove(id)}/>
         </div>
     );

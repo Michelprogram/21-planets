@@ -8,12 +8,9 @@ import usePanier from '../hooks/panier';
 
 const Panier = ({className = ""}) => {
 
-    const {panier, total, size} = usePanier()
+    const {panier, total, size, superficie, masse,dist, longest} = usePanier()
 
-    const [superficie, setSuperficie] = useState(0)
-    const [masse, setMasse] = useState(0)
     const [far, setFar] = useState("")
-    const [dist, setDist] = useState(0)
 
     const heightValue = () =>{
         return {height: 100*size()+"px"}
@@ -25,7 +22,7 @@ const Panier = ({className = ""}) => {
                 <div className="price-list">
                     <div className="container-articles" style={heightValue()}>
                         {
-                            panier.map((data:IFakeData, index: number)=> <Articles key={index} name={data.name} amount={data.amount} id={data.id}/>)
+                            panier.map((data:IFakeData, index: number)=> <Articles key={index} planete={data.planete} id={data.id}/>)
                         }
                     </div>
                 </div>
@@ -39,10 +36,10 @@ const Panier = ({className = ""}) => {
                 <div className="statistics">
                     <div className="container-inside">
                         <p className="title">Statistique</p>
-                        <p className="superficie">Superficie total : <span>{superficie} m3</span></p>
-                        <p className="masse">Masse total : <span>{masse} T</span></p>
-                        <p className="far">Planete la plus loin : <span>{far}</span></p>
-                        <p className="dist">Distance la plus loin : <span>{dist} km</span></p>
+                        <p className="superficie">Superficie total : <span>{superficie()} m3</span></p>
+                        <p className="masse">Masse total : <span>{masse()} T</span></p>
+                        <p className="far">Planete la plus loin : <span>{longest().planete.name}</span></p>
+                        <p className="dist">Distance la plus loin : <span>{dist()} km</span></p>
                     </div>
                 </div>
             </div>
