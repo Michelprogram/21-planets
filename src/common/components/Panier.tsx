@@ -3,30 +3,20 @@ import ButtonViolet from './Button/ButtonViolet';
 import IFakeData from '../../interfaces/IFakeData';
 import Articles from './Card/Articles';
 
-import fakesData from '../../constants/fakeData';
 import setClassName from '../../utils/ClassName';
+import usePanier from '../hooks/panier';
+
 const Panier = ({className = ""}) => {
 
-    const [fakeData, setFakeData] = useState<Array<IFakeData>>(fakesData)
+    const {panier, total, size} = usePanier()
 
-    const [total, setTotal] = useState(0)
     const [superficie, setSuperficie] = useState(0)
     const [masse, setMasse] = useState(0)
     const [far, setFar] = useState("")
     const [dist, setDist] = useState(0)
 
-    useEffect(()=>{
-        let total: number = 0; 
-        for (let index = 0; index < fakeData.length; index++) {
-            const element = fakeData[index];
-            total += element.amount
-        }
-        total = parseInt(total.toFixed(2))
-        setTotal(total)
-    },[])
-
     const heightValue = () =>{
-        return {height: 100*fakeData.length+"px"}
+        return {height: 100*size()+"px"}
     }
 
     return (
@@ -35,14 +25,14 @@ const Panier = ({className = ""}) => {
                 <div className="price-list">
                     <div className="container-articles" style={heightValue()}>
                         {
-                            fakeData.map((data:IFakeData, index: number)=> <Articles key={index} name={data.name} amount={data.amount}/>)
+                            panier.map((data:IFakeData, index: number)=> <Articles key={index} name={data.name} amount={data.amount} id={data.id}/>)
                         }
                     </div>
                 </div>
                 <div className="total">
                     <div className="container-inside">
                         <p>Résumé de votre panier</p>
-                        <p>{total} $</p>
+                        <p>{total()} $</p>
                         <ButtonViolet link="/" text="Acheter" className="button-panier-acheter"/>
                     </div>
                 </div>

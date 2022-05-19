@@ -3,8 +3,6 @@ const setClassName = (...name: Array<string>): string => {
 
   result = name.reduce((p, n) => p + " " + n);
 
-  console.log(result);
-
   return result;
 };
 
