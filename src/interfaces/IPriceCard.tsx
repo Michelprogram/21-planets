@@ -2,6 +2,6 @@ export default interface PriceCard{
     logo: string,
     price: string,
     title: string,
-    elements: [],
+    elements: Array<string>,
     link: string,
 }
