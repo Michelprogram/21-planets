@@ -4,6 +4,8 @@ import IFakeData from '../../../interfaces/IFakeData';
 import PlanetsSVG from "../../../constants/images"
 import { random } from '../../../utils/Random';
 
+import { DeleteOutlined} from '@ant-design/icons';
+
 
 const Articles = ({name, amount}: IFakeData) => {
 
@@ -18,6 +20,7 @@ const Articles = ({name, amount}: IFakeData) => {
             <img src={randomIcon()} alt="" className="icon" />
             <p className='name'>{name}</p>
             <p className='amount'>{amount} $</p>
+            <DeleteOutlined />
         </div>
     );
 };
