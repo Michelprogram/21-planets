@@ -5,7 +5,6 @@ import Planete1 from "../assets/images/photos/planete1.webp";
 import Planete2 from "../assets/images/photos/planete2.webp";
 import Planete3 from "../assets/images/photos/planete3.webp";
 import Planete4 from "../assets/images/photos/planete4.webp";
-import VoieLactee1 from "../assets/images/photos/voieLactee1.webp";
 import VoieLactee2 from "../assets/images/photos/voieLactee2.webp";
 
 //SVG
@@ -28,7 +27,6 @@ export {
   Planete2,
   Planete3,
   Planete4,
-  VoieLactee1,
   VoieLactee2,
   //SVG
   BlackHole,
