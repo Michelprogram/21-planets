@@ -46,3 +46,16 @@ $little: 5%;
     @include marginBetweenComponents($little);
   }
 }
+
+//News
+
+.container-news {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  &-card {
+    width: 80%;
+  }
+}

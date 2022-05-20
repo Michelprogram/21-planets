@@ -6,12 +6,14 @@ let data: Array<INews> = [];
 
 const fetchNews = async () => {
   if (data.length > 0) return data;
+  data = [];
 
   try {
     const request = await axios.get(URI);
     request.data.forEach((element: INews) => data.push(element));
     return data;
   } catch (err) {
+    console.warn("Problème lors du fetch à l'api de news : ", err);
     return [];
   }
 };
