@@ -59,6 +59,10 @@ $i: 0;
       .icons {
         opacity: 0;
         transition: opacity 0.5s ease-in;
+
+        &-active {
+          opacity: 1;
+        }
       }
       .cart-info {
         .size-info {

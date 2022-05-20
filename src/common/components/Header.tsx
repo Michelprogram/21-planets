@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import PlanetsSVG from "../../constants/images";
 import { random } from "../../utils/Random";
 import usePanier from "../hooks/panier";
@@ -7,6 +7,8 @@ import usePanier from "../hooks/panier";
 const Header = () => {
 
   const { panier, size } = usePanier();
+
+  const location = useLocation()
 
   const setFavicon = (): void => {
     const favicon = document.getElementById(
@@ -28,10 +30,14 @@ const Header = () => {
     } else {
       return(
         <li className="cart-info">
-          <p>Panier <span className="icons">🛒 </span></p>
+          <p>Panier <span className={iconOnLocation("panier")}>🛒 </span></p>
         </li>
       )
     }
+  }
+
+  const iconOnLocation = (expected: string) :string =>{
+    return "/"+expected == location.pathname ? "icons-active" : "icons";
   }
 
   useEffect(() => setFavicon, []);
@@ -41,7 +47,7 @@ const Header = () => {
       <div className="navigation">
         <NavLink to={"/login"} className="links">
           <li>
-            Login <span className="icons">🔥</span>
+            Login <span className={iconOnLocation("login")}>🔥</span>
           </li>
         </NavLink>
 
@@ -51,7 +57,7 @@ const Header = () => {
 
         <NavLink to={"/shop"} className="links">
           <li>
-            Shop <span className="icons">🌌</span>
+            Shop <span className={iconOnLocation("shop")}>🌌</span>
           </li>
         </NavLink>
 
@@ -61,19 +67,19 @@ const Header = () => {
 
         <NavLink to={"/about"} className="links">
           <li>
-            A propos <span className="icons">🧊</span>
+            A propos <span className={iconOnLocation("about")}>🧊</span>
           </li>
         </NavLink>
 
-        <NavLink to={"/articles"} className="links">
+        <NavLink to={"/news"} className="links">
           <li>
-            News <span className="icons">📰</span>
+            News <span className={iconOnLocation("news")}>📰</span>
           </li>
         </NavLink>
 
         <NavLink to={"/support"} className="links">
           <li>
-            Support <span className="icons">🎫</span>
+            Support <span className={iconOnLocation("support")}>🎫</span>
           </li>
         </NavLink>
       </div>
