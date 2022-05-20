@@ -65,7 +65,7 @@ const Header = () => {
           </li>
         </NavLink>
 
-        <NavLink to={"/articles"} className="links">
+        <NavLink to={"/news"} className="links">
           <li>
             News <span className="icons">📰</span>
           </li>

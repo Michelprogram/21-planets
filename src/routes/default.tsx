@@ -6,6 +6,7 @@ import Panier from "../pages/Panier"
 import Login from "../pages/Login"
 import About from "../pages/About"
 import Support from '../pages/Support';
+import News from '../pages/News';
 
 export default [
     <Route path={"/"} element={<Home />} />,
@@ -14,4 +15,5 @@ export default [
     <Route path={"/panier"} element={<Panier />} />,
     <Route path={"/about"} element={<About />} />,
     <Route path={"/support"} element={<Support />} />,
+    <Route path={"/news"} element={<News />} />
 ]
