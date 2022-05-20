@@ -19,7 +19,7 @@ const News = () => {
     return (
         <div className='container-news' style={heightValue()}>
             {
-                data.map((el)=><CardNews {...el}/>)
+                data.map((el:INews, index:number)=><CardNews key={index}{...el}/>)
             }
         </div>
     );

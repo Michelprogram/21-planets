@@ -13,8 +13,8 @@ const PriceCard = ({logo, price, title, elements, link}: IPriceCard) =>{
             <br />
             <p>Contient :</p>
             <ul>
-                {elements.map((element:string)=>{
-                    return(<li key={element}>{element}</li>)
+                {elements.map((element:string, index:number)=>{
+                    return(<li key={index}>{element}</li>)
                 })}
             </ul>
             
