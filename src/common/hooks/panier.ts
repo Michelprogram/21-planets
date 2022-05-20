@@ -24,7 +24,7 @@ const usePanier = () => {
   };
 
   const totalCost = (): number => {
-    if (panier.length < 1) return -1;
+    if (panier.length < 1) return 0;
     return addPlanete<IFakeData>(panier, "amount");
   };
 
