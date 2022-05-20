@@ -6,10 +6,10 @@ import PrixAttractifs from '../common/components/PrixAttractifs';
 const About = () => {
     return (
         <div>
-            <LargeChoix className='bloc'/>
-            <PrixAttractifs className='bloc'/>
-            <PretAchatPlanetes2 className='bloc'/>
-            </div>
+            <LargeChoix className='about-large-choix'/>
+            <PrixAttractifs className='about-prix-attractif'/>
+            <PretAchatPlanetes2 className='about-pret-achat'/>
+        </div>
     );
 };
 

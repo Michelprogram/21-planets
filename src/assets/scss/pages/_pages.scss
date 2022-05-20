@@ -37,3 +37,12 @@ $little: 5%;
     @include marginBetweenComponents($little);
   }
 }
+
+//About
+.about- {
+  &large-choix,
+  &prix-attractif,
+  &pret-achat {
+    @include marginBetweenComponents($little);
+  }
+}

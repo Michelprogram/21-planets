@@ -6,7 +6,7 @@ import { random } from '../../../utils/Random';
 
 import usePanier from '../../hooks/panier';
 
-import Trash from "../../../assets/images/svg/trash.svg"
+import { Trash } from '../../../utils/Images';
 
 const Articles = ({id, planete}: IFakeData) => {
 

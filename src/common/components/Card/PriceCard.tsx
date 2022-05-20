@@ -6,7 +6,7 @@ const PriceCard = ({logo, price, title, elements, link}: IPriceCard) =>{
 
     return(
         <div className="price_card">
-            <img src={'src/assets/images/svg/'+logo}/>
+            <img src={logo}/>
             <h3>{price}</h3>
             <h4>{title}</h4>
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import ButtonViolet from './Button/ButtonViolet';
-import Planete from "../../assets/images/photos/planete4.webp"
 import setClassName from '../../utils/ClassName';
+
+import { Planete4 as Planete } from '../../utils/Images';
 
 const ParcourezUnivers = ({className = ''}) => {
     return (

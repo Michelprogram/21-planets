@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import ButtonViolet from './Button/ButtonViolet';
 import IFakeData from '../../interfaces/IFakeData';
 import Articles from './Card/Articles';
-import Plan from "../../assets/images/svg/master-plan.svg"
+
+import { MasterPlan as Plan } from '../../utils/Images';
 
 import setClassName from '../../utils/ClassName';
 import usePanier from '../hooks/panier';

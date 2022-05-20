@@ -1,9 +1,6 @@
-import VaporWave from "../../assets/images/svg/vaporwave.svg"
-import Uranus from "../../assets/images/svg/uranus.svg"
-import Saturn from "../../assets/images/svg/saturn.svg"
-import Neptune from "../../assets/images/svg/neptune.svg"
 import setClassName from '../../utils/ClassName';
 
+import { Vaporwave as VaporWave, Uranus, Saturn, Neptune } from "../../utils/Images";
 
 const NouvelleCollection = ({className = ''}) =>{
     return(
