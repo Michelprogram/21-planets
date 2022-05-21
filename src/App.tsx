@@ -7,6 +7,7 @@ import Footer from './common/components/Footer';
 import articles from "./constants/fakeData";
 
 import DefaultRoute from "./routes/default"
+import { UserProvider } from './utils/UserContext';
 
 import {PanierProvider} from "./context/panier"
 
@@ -16,9 +17,11 @@ function App() {
     <BrowserRouter>
       <PanierProvider>
         <Header />
-          <Routes>
-            {DefaultRoute}
-          </Routes>
+          <UserProvider value="">
+            <Routes>
+              {DefaultRoute}
+            </Routes>
+          </UserProvider>
         <Footer />
       </PanierProvider>
     </BrowserRouter>
