@@ -3,7 +3,7 @@ import ButtonViolet from './Button/ButtonViolet';
 import IFakeData from '../../interfaces/IFakeData';
 import Articles from './Card/Articles';
 
-import { MasterPlan as Plan } from '../../utils/Images';
+import { MasterPlan as Plan } from '../../constants/Images';
 
 import setClassName from '../../utils/ClassName';
 import usePanier from '../hooks/panier';

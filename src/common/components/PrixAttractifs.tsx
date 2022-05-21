@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import setClassName from '../../utils/ClassName';
 import PriceCard from './Card/PriceCard';
 
-import {RedGiant, Saturn, BlackHole } from "../../utils/Images";
+import {RedGiant, Saturn, BlackHole } from "../../constants/Images";
 
 const PrixAttractifs = ({className=''}) => {
     

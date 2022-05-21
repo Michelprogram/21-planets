@@ -1,7 +1,7 @@
 import React from 'react';
 import setClassName from '../../utils/ClassName';
 
-import { Planete1 as Planet, VoieLactee2 as Space } from '../../utils/Images';
+import { Planete1 as Planet, VoieLactee2 as Space } from '../../constants/Images';
 
 const PostBottom = ({className = ""}) => {
     return (

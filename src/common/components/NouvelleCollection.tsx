@@ -1,6 +1,6 @@
 import setClassName from '../../utils/ClassName';
 
-import { Vaporwave as VaporWave, Uranus, Saturn, Neptune } from "../../utils/Images";
+import { Vaporwave as VaporWave, Uranus, Saturn, Neptune } from "../../constants/Images";
 
 const NouvelleCollection = ({className = ''}) =>{
     return(

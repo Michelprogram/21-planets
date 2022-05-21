@@ -2,7 +2,7 @@ import React from 'react';
 import ButtonViolet from './Button/ButtonViolet';
 import setClassName from '../../utils/ClassName';
 
-import { Planete4 as Planete } from '../../utils/Images';
+import { Planete4 as Planete } from '../../constants/Images';
 
 const ParcourezUnivers = ({className = ''}) => {
     return (

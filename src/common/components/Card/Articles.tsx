@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import IFakeData from '../../../interfaces/IFakeData';
 
-import PlanetsSVG from "../../../constants/images"
+import {svgIcones as PlanetsSVG} from "../../../constants/Images"
 import { random } from '../../../utils/Random';
 
 import usePanier from '../../hooks/panier';
 
-import { Trash } from '../../../utils/Images';
+import { Trash } from '../../../constants/Images';
 
 const Articles = ({id, planete}: IFakeData) => {
 

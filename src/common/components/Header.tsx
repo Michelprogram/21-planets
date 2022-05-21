@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import PlanetsSVG from "../../constants/images";
+import {svgIcones as PlanetsSVG} from "../../constants/Images";
 import { random } from "../../utils/Random";
 import usePanier from "../hooks/panier";
 

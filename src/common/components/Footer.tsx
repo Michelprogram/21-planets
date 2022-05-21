@@ -1,5 +1,5 @@
 import ButtonXL from "./Button/ButtonXL"
-import { VoieLactee2 as Space } from "../../utils/Images"
+import { VoieLactee2 as Space } from "../../constants/Images"
 
 const Footer = () =>{
 
