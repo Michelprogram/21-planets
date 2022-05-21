@@ -47,6 +47,13 @@ $little: 5%;
   }
 }
 
+//Support
+.support-{
+  &eclaircissement{
+    @include marginBetweenComponents($little);
+  }
+}
+
 //News
 
 .container-news {

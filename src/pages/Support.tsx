@@ -3,7 +3,7 @@ import Eclaircissement from '../common/components/Eclaircissement';
 const Support = () => {
     return (
         <div>
-            <Eclaircissement className='bloc'/>
+            <Eclaircissement className='support-eclaircissement'/>
         </div>
     );
 };
