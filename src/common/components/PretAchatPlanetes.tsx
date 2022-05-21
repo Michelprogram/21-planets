@@ -1,7 +1,7 @@
 import React from 'react';
 import setClassName from '../../utils/ClassName';
 import ButtonBlue from './Button/ButtonBlue';
-import { useUser } from '../../utils/UserContext';
+import { useUser } from '../../context/UserContext';
 
 const PretAchatPlanetes = ({className=''}) =>{
     const user = useUser();

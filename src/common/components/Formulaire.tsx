@@ -2,7 +2,7 @@ import { Form, Input} from 'antd';
 import { useState } from 'react';
 import IFormulaire from '../../interfaces/IFormulaire';
 import ButtonXL from './Button/ButtonXL';
-import { useUpdateUser } from '../../utils/UserContext';
+import { useUpdateUser } from '../../context/UserContext';
 
 
 const Formulaire = ({titre, submitText, submitTarget,type, errorMsg, className}: IFormulaire) => {

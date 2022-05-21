@@ -7,8 +7,7 @@ import Footer from './common/components/Footer';
 import articles from "./constants/fakeData";
 
 import DefaultRoute from "./routes/default"
-import { UserProvider } from './utils/UserContext';
-
+import { UserProvider } from './context/UserContext';
 import {PanierProvider} from "./context/panier"
 
 function App() {  
