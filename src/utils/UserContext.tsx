@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import User from "../interfaces/IUser";
 
 const UserContext = React.createContext<string>("");
 const UpdateUserContext = React.createContext<any>({});

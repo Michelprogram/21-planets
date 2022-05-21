@@ -1,16 +1,44 @@
-import { Form, Input, Button, Checkbox } from 'antd';
-import React, { useState } from 'react';
+import { Form, Input} from 'antd';
+import { useState } from 'react';
 import IFormulaire from '../../interfaces/IFormulaire';
 import ButtonXL from './Button/ButtonXL';
+import { useUpdateUser } from '../../utils/UserContext';
 
-const Formulaire = ({titre, submitText, submitTarget,className}: IFormulaire) => {
+
+const Formulaire = ({titre, submitText, submitTarget,type, errorMsg, className}: IFormulaire) => {
+  const updateUser = useUpdateUser();
+  const [errorMsgVisible, setErrorMsgVisible] = useState(false);
+
+  const users = [
+      {'username':'daryl','password':'deriendorian21'},
+      {'username':'dorian','password':'jeje'}
+    ];
 
   const onFinish = (values:any) => {
-    console.log('Success:', values);
-  };
+    var username = values.username;
+    var password = values.password;
+    var newEntry = {'username':username,'password':password};
+    var userExists = users.some(user => {
+        return (user.username == username && user.password == password);
+    });
 
-  const onFinishFailed = (errorInfo:any) => {
-    console.log('Failed:', errorInfo);
+    if(type === "enregistrement"){
+        if(!userExists)
+        {
+            users.push(newEntry);
+            updateUser(username);
+        }else{
+            setErrorMsgVisible(true);
+        }
+    }
+
+    if(type === "connexion"){
+        if(userExists){
+            updateUser(username);
+        }else{
+            setErrorMsgVisible(true);
+        }
+    }
   };
 
   return (
@@ -29,7 +57,6 @@ const Formulaire = ({titre, submitText, submitTarget,className}: IFormulaire) =>
             remember: true,
         }}
         onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
         autoComplete="off"
         >
 
@@ -62,16 +89,7 @@ const Formulaire = ({titre, submitText, submitTarget,className}: IFormulaire) =>
 
         <br/>
 
-        <Form.Item
-            name="remember"
-            valuePropName="checked"
-            wrapperCol={{
-            offset: 8,
-            span: 16,
-            }}
-        >
-            <Checkbox>Se souvenir de moi</Checkbox>
-        </Form.Item>
+        {errorMsgVisible ? <p className='ant-form-item-explain-error'>{errorMsg}</p> : <p></p>}
         </div>
 
         <br />

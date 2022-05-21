@@ -8,7 +8,7 @@ const PretAchatPlanetes = ({className=''}) =>{
 
     return(
         <div className={setClassName("pret_achat_container",className)}>
-           <h3>Alors {user}, prêt(e) à acheter des planètes ?*</h3>
+           <h3>Bienvenu {user}, prêt(e) à acheter des planètes ?*</h3>
             <br />
             <p>*Tout achat en dehors de notre système solaire n'est pas remboursable. Pour toute plainte, s'addresser à notre avocat.</p>
             <br />
