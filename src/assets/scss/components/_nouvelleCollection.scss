@@ -1,12 +1,10 @@
 @use "../variables/colors" as color;
-@use "../variables/fonts" as font;
 
 .container-new-collection {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-family: font.$varela-round;
   height: 600px;
   background-color: color.$gray2;
   gap: 10%;

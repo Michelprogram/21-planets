@@ -1,5 +1,4 @@
 @use "../variables/colors" as color;
-@use "../variables/fonts" as font;
 
 $colors-balls: color.$purple, color.$green-light, color.$blue-light,
   color.$pink-dark, color.$gray, color.$dark-blue;
@@ -19,8 +18,6 @@ $i: 0;
   grid-row-gap: 50px;
 
   background-color: color.$gray2;
-
-  font-family: font.$varela-round;
 
   .navigation {
     position: relative;

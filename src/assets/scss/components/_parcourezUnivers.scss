@@ -1,8 +1,6 @@
 @use "../variables/colors" as color;
-@use "../variables/fonts" as font;
 
 .container-univers {
-  font-family: font.$varela-round;
   background-color: color.$gray2;
   display: grid;
   grid-template-columns: 2fr 1fr;

@@ -1,9 +1,7 @@
 @use "../variables/colors" as color;
-@use "../variables/fonts" as font;
 
 .container-title {
   background-color: color.$gray2;
-  font-family: font.$varela-round;
   display: flex;
   justify-content: center;
   align-items: center;
