@@ -1,10 +1,7 @@
 @use "../variables/colors" as color;
-@use "../variables/fonts" as font;
 
 .container-footer {
   background-color: color.$gray2;
-
-  font-family: font.$varela-round;
 
   height: 350px;
   width: 100%;
