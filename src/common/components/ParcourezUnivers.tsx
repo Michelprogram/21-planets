@@ -13,7 +13,7 @@ const ParcourezUnivers = ({className = ''}) => {
             <div className="text-part">
                 <p className="title">Parcourez l’univers</p>
                 <p className='description'>Avec notre collection toujours plus grande de corps célestes venus des plus lointaines galaxies, trouvez celui qui fera briller vos yeux. Sortez les téléscopes...</p>
-                <ButtonViolet link="/shop" text='En savoir plus' className="button-univers"/>
+                <ButtonViolet link="/about" text='En savoir plus' className="button-univers"/>
             </div>
         </div>
     );
