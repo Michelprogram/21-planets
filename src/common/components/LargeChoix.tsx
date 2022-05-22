@@ -1,12 +1,16 @@
 import NouveauteCard from './Card/NouveauteCard';
 import setClassName from '../../utils/ClassName';
+import { useUser } from '../../context/UserContext';
 
 const LargeChoix = ({className=''}) => {
+    const user:string = useUser();
+
     return (
         <div className={setClassName('large_choix',className)}>
 
             <div className='nouveaute_container'>
-                <NouveauteCard nouveaute='Pendant une période limitée, gravez votre prénom et celui d’un proche sur un achat de votre choix pour seulement 240 999 000 € !' link='/login'/>
+                {user=='' ? <NouveauteCard nouveaute='Pendant une période limitée, gravez votre prénom et celui d’un proche sur un achat de votre choix pour seulement 240 999 000 € !' link='/login'/> : 
+                <NouveauteCard nouveaute='Pendant une période limitée, gravez votre prénom et celui d’un proche sur un achat de votre choix pour seulement 240 999 000 € !' link='/shop'/> }
             </div>
 
             <div className='description_container'>

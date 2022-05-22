@@ -1,7 +1,5 @@
-import React from 'react';
 import {Link} from "react-router-dom";
 import IButton from '../../../interfaces/IButton';
-import setClassName from '../../../utils/ClassName';
 
 const ButtonViolet = ({link, text, className} : IButton) =>{
     return(
