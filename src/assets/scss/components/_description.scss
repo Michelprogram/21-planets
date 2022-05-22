@@ -1,0 +1,57 @@
+@use "../variables/colors" as color;
+
+.description-container{
+    width: auto;
+    height: 600px;
+    background-color: color.$gray2;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    img{
+        width: 500px;
+        height: 500px;
+        border-radius: 50px;
+        box-shadow: 10px 10px 5px black;
+    }
+
+    .description{
+        width: 500px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        .description-detaillee{
+            padding: 10px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            background-color: color.$dark-blue;
+            width: 400px;
+            height: 200px;
+            font-size: x-large;
+            display: flex;
+            align-items: center;
+
+            ul li {
+                color: white;
+                p{
+                    display: inline;
+                    color: color.$blue-light;
+                }
+            }
+        }
+
+        .achat{
+            width: 400px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            p{
+                font-size: xx-large;
+            }
+        }
+    }
+}

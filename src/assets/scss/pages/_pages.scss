@@ -33,7 +33,8 @@ $little: 5%;
 
 .shop- {
   &propositions,
-  &post-bottom {
+  &post-bottom,
+  &description {
     @include marginBetweenComponents($little);
   }
 }
@@ -55,7 +56,6 @@ $little: 5%;
 }
 
 //News
-
 .container-news {
   display: flex;
   justify-content: space-around;
