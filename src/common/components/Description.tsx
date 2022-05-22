@@ -1,16 +1,20 @@
-import IPlanete from '../../interfaces/IPlanete';
-import setClassName from '../../utils/ClassName';
 import { Asteroid } from "../../constants/Images";
+import { useSelectedItem } from "../../context/SelectedItemContext";
+import IDescription from "../../interfaces/IDescription";
+import { randomNotFloor } from "../../utils/Random";
 import ButtonBlue from './Button/ButtonBlue';
 
 
-const Description = ({className=''}) => {
+const Description = ({name, className}:IDescription) => {
+    const selectedItem = useSelectedItem();
+    console.log(selectedItem)
+
     return (
-        <div className={setClassName('description-container',className)}>
+        <div className={'description-container '+className}>
             <img src={Asteroid} alt="jeje" />
 
             <div className='description'>
-                <h1>B612</h1>
+                <h1>{name}</h1>
 
                 <div className='description-detaillee'>
                     <ul>
@@ -24,7 +28,7 @@ const Description = ({className=''}) => {
                 </div>
 
                 <div className='achat'>
-                    <p className='prix'>4 555 $</p>
+                    <p className='prix'>{randomNotFloor(5000, 6000)} $</p>
                     <ButtonBlue text='Ajouter au panier' link='/panier'/>
                 </div>
             </div>
