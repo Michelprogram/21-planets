@@ -12,6 +12,7 @@ import BlackHole from "../assets/images/svg/blackHole.svg";
 import RedGiant from "../assets/images/svg/redGiants.svg";
 import Saturn from "../assets/images/svg/saturn.svg";
 import MasterPlan from "../assets/images/svg/master-plan.svg";
+import NotFound from "../assets/images/svg/404.svg";
 import Neptune from "../assets/images/svg/neptune.svg";
 import Planet from "../assets/images/svg/planet.svg";
 import Pluto from "../assets/images/svg/pluto.svg";
@@ -28,7 +29,6 @@ const svgIcones = [
   Neptune,
   Planet,
   Pluto,
-  Trash,
   Uranus,
   Vaporwave,
   Venus,
@@ -54,6 +54,7 @@ export {
   Uranus,
   Vaporwave,
   Venus,
+  NotFound,
   //list
   svgIcones,
 };

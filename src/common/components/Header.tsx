@@ -40,7 +40,7 @@ const Header = () => {
     return "/"+expected == location.pathname ? "icons-active" : "icons";
   }
 
-  useEffect(() => setFavicon, []);
+  useEffect(() => setFavicon(), []);
 
   return (
     <div className="container-header">
@@ -83,14 +83,36 @@ const Header = () => {
           </li>
         </NavLink>
       </div>
+
       <div className="container-balls">
-        <div className="ball"></div>
-        <div className="ball"></div>
-        <div className="ball"></div>
-        <div className="ball"></div>
-        <div className="ball"></div>
-        <div className="ball"></div>
+
+        <NavLink to={"/categories/asteroides"} >
+          <div className="ball-1 ball"></div>
+        </NavLink>
+
+        <NavLink to={"/categories/exoplanete"}>
+          <div className="ball-2 ball"></div>
+        </NavLink>
+
+        <NavLink to={"/categories/sattelites"}>
+          <div className="ball-3 ball"></div>
+        </NavLink>
+
+        <NavLink to={"/categories/packs"}>
+          <div className="ball-4 ball"></div>
+        </NavLink>
+
+        <NavLink to={"/categories/cometes"}>
+          <div className="ball-5 ball"></div>
+        </NavLink>
+
+        <NavLink to={"/categories/etoiles"}>
+          <div className="ball-6 ball"></div>
+        </NavLink>
+        
+
       </div>
+
     </div>
   );
 };
