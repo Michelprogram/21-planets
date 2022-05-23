@@ -88,3 +88,10 @@ $little: 5%;
     letter-spacing: 2px;
   }
 }
+
+// Categories
+.container-categories-page {
+  .container-title {
+    @include marginBetweenComponents($little);
+  }
+}
