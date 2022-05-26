@@ -7,7 +7,6 @@ import ButtonBlue from './Button/ButtonBlue';
 
 const Description = ({name, className}:IDescription) => {
     const selectedItem = useSelectedItem();
-    console.log(selectedItem)
 
     return (
         <div className={'description-container '+className}>
