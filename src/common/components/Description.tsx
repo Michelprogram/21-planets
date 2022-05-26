@@ -19,10 +19,10 @@ const Description = ({data, className}:IDescription) => {
                     <ul>
                         <li>Nom complet : <p>{data.name}</p></li>
                         <li>Référence NEO : <p>{data.neo_reference_id}</p></li>
-                        <li>Diamètre estimé : <p>{data.estimated_diameter_min}</p> - <p>{data.estimated_diameter_max}</p> km</li>
-                        <li>Hauteur Absolue : <p>{data.absolute_magnitude_h}</p> km</li>
-                        <li>Distance de la Terre : <p>{data.distance_from_earth}</p> km </li>
-                        <li>Vélocité : <p>{data.velocity}</p> km/h </li>
+                        <li>Diamètre estimé : <p>{Math.round(data.estimated_diameter_min)}</p> - <p>{Math.round(data.estimated_diameter_max)}</p> km</li>
+                        <li>Hauteur Absolue : <p>{Math.round(data.absolute_magnitude_h)}</p> km</li>
+                        <li>Distance de la Terre : <p>{Math.round(parseInt(data.distance_from_earth))}</p> km </li>
+                        <li>Vélocité : <p>{Math.round(data.velocity)}</p> km/h </li>
                     </ul>
                 </div>
 
