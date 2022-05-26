@@ -24,12 +24,12 @@
         justify-content: space-between;
 
         .description-detaillee{
+            width: fit-content;
+            height: fit-content;
             padding: 10px;
             border: 2px solid transparent;
             border-radius: 10px;
             background-color: color.$dark-blue;
-            width: 400px;
-            height: 200px;
             font-size: x-large;
             display: flex;
             align-items: center;
@@ -44,7 +44,7 @@
         }
 
         .achat{
-            width: 400px;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;

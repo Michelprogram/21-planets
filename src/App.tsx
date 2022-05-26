@@ -16,7 +16,7 @@ function App() {
       <PanierProvider>
         <Header />
           <UserProvider value="">
-            <SelectedItemProvider value="">
+            <SelectedItemProvider value={{}}>
               <Routes>
                 {DefaultRoute}
               </Routes>

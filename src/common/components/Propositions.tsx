@@ -4,6 +4,7 @@ import fakesData from "../../constants/fakeData";
 import setClassName from '../../utils/ClassName';
 import fetchAsteroides from '../../api/asteroids';
 import IAsteroid from '../../interfaces/IAsteroide';
+import AsteroideCard from './Card/AsteroideCard';
 
 const Propositions = ({className = ""}) => {
     const [data, setData] = useState<Array<IAsteroid>>([])
@@ -17,7 +18,13 @@ const Propositions = ({className = ""}) => {
             <p className='title'>Nos meilleur propositions ...</p>
             <p className='quote'>“Le temps et l'espace ne sont pas des conditions d'existence, le temps et l'espace sont un modèle de réflexion.” - Gaspard</p>
             <div className="best-propositions">
-                {data.slice(0,4).map((asteroide, index:number)=> <Planets key={index} name={asteroide.name_limited} forme={true}/>)}
+                {data.slice(0,4).map((el:any, index:number)=>
+                 <AsteroideCard key={index} name_limited={el.name_limited} name={el.name} neo_reference_id={el.neo_reference_id} 
+                 estimated_diameter_min={el.estimated_diameter.kilometers.estimated_diameter_min} 
+                 estimated_diameter_max={el.estimated_diameter.kilometers.estimated_diameter_max} 
+                 distance_from_earth={el.close_approach_data[0].miss_distance.kilometers} 
+                 absolute_magnitude_h={el.absolute_magnitude_h} 
+                 velocity={el.close_approach_data[0].relative_velocity.kilometers_per_hour}/>)}
             </div>
         </div>
     );

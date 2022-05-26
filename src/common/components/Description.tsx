@@ -5,7 +5,7 @@ import { randomNotFloor } from "../../utils/Random";
 import ButtonBlue from './Button/ButtonBlue';
 
 
-const Description = ({name, className}:IDescription) => {
+const Description = ({data, className}:IDescription) => {
     const selectedItem = useSelectedItem();
 
     return (
@@ -13,16 +13,16 @@ const Description = ({name, className}:IDescription) => {
             <img src={Asteroid} alt="jeje" />
 
             <div className='description'>
-                <h1>{name}</h1>
+                <h1>{data.name_limited}</h1>
 
                 <div className='description-detaillee'>
                     <ul>
-                        <li>Nom complet : <p>...</p></li>
-                        <li>Référence NEO : <p>...</p></li>
-                        <li>Diamètre estimé : <p>...</p> - <p>...</p> km</li>
-                        <li>Hauteur Absolue : <p>...</p> km</li>
-                        <li>Distance de la Terre : <p>...</p> km </li>
-                        <li>Vélocité : <p>...</p> km/h </li>
+                        <li>Nom complet : <p>{data.name}</p></li>
+                        <li>Référence NEO : <p>{data.neo_reference_id}</p></li>
+                        <li>Diamètre estimé : <p>{data.estimated_diameter_min}</p> - <p>{data.estimated_diameter_max}</p> km</li>
+                        <li>Hauteur Absolue : <p>{data.absolute_magnitude_h}</p> km</li>
+                        <li>Distance de la Terre : <p>{data.distance_from_earth}</p> km </li>
+                        <li>Vélocité : <p>{data.velocity}</p> km/h </li>
                     </ul>
                 </div>
 

@@ -1,4 +1,6 @@
+import IAsteroid from "./IAsteroide";
+
 export default interface IDescription{
-    name:string,
+    data:IAsteroid,
     className?:string
 }

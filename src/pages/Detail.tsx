@@ -6,7 +6,7 @@ const Detail = () => {
 
     return (
         <div>
-                <Description name={selectedItem} className="shop-description"/>
+                <Description data={selectedItem} className="shop-description"/>
         </div>
     );
 };
