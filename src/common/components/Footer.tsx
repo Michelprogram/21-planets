@@ -14,7 +14,7 @@ const Footer = () =>{
                     <div className="buy">
                         <p>Prêt à acheter</p>
                         <p>La première plateforme marchande de planètes au monde, crée pour satisfaire les passionés, les curieux et ceux qui voient en grand... </p>
-                        <ButtonXL link="/support" text="En savoir plus"/>
+                        <ButtonXL link="/about" text="En savoir plus"/>
                     </div>
                 </div>
             </div>
