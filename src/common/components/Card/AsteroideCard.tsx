@@ -1,25 +1,26 @@
-import React from 'react';
-import IPlanete from '../../../interfaces/IPlanete';
 import {Link} from "react-router-dom";
 import { useUpdateSelectedItem } from '../../../context/SelectedItemContext';
-import IAsteroid from '../../../interfaces/IAsteroide';
+import IAsteroid from "../../../interfaces/IAsteroide";
 
-
-const AsteroideCard = (props:any) => {
+const AsteroideCard = ({id, asteroide}:IAsteroid) => {
 
     const updateSelectedItem = useUpdateSelectedItem();
     function update(){
-        updateSelectedItem(props.asteroide_data);
+        updateSelectedItem(asteroide);
+    }
+
+    const getColor = () =>{
+        return {backgroundColor: asteroide.color}
     }
     
     return (
         <div className='container-card-planete'>
-            <div className="top-side">
-                <div className="round"></div>    
+            <div className="top-side" style={getColor()}>
+                <img src={asteroide.icon} className='round'/>   
             </div>
             <div className="description">
                 <div>
-                    <p className="title">{props.asteroide_data.name_limited}</p>
+                    <p className="title">{asteroide.name_limited}</p>
 
                     <Link to="/detail" onClick={update}>
                         <p>Voir plus &gt;</p>

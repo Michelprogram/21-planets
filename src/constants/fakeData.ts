@@ -1,5 +1,10 @@
 import IFakeData from "../interfaces/IFakeData";
-import { randomNotFloor } from "../utils/Random";
+import { random, randomNotFloor } from "../utils/Random";
+import {svgIcones as PlanetsSVG} from "../constants/Images"
+
+const randomIcon = () :string =>{
+  return PlanetsSVG[random(0, PlanetsSVG.length)]
+}
 
 const fakesData: Array<IFakeData> = [
   {
@@ -10,6 +15,7 @@ const fakesData: Array<IFakeData> = [
       superficie: randomNotFloor(50000000, 60000000),
       masse: randomNotFloor(50000000, 60000000),
       distanceFromEarth: randomNotFloor(50000000, 60000000),
+      icon: randomIcon()
     },
   },
   {
@@ -20,6 +26,7 @@ const fakesData: Array<IFakeData> = [
       superficie: randomNotFloor(50000000, 60000000),
       masse: randomNotFloor(50000000, 60000000),
       distanceFromEarth: randomNotFloor(50000000, 60000000),
+      icon: randomIcon()
     },
   },
   {
@@ -30,6 +37,7 @@ const fakesData: Array<IFakeData> = [
       superficie: randomNotFloor(50000000, 60000000),
       masse: randomNotFloor(50000000, 60000000),
       distanceFromEarth: randomNotFloor(50000000, 60000000),
+      icon: randomIcon()
     },
   },
   {
@@ -40,6 +48,7 @@ const fakesData: Array<IFakeData> = [
       superficie: randomNotFloor(50000000, 60000000),
       masse: randomNotFloor(50000000, 60000000),
       distanceFromEarth: randomNotFloor(50000000, 60000000),
+      icon: randomIcon()
     },
   },
   {
@@ -50,6 +59,7 @@ const fakesData: Array<IFakeData> = [
       superficie: randomNotFloor(50000000, 60000000),
       masse: randomNotFloor(50000000, 60000000),
       distanceFromEarth: randomNotFloor(50000000, 60000000),
+      icon: randomIcon()
     },
   },
   {
@@ -60,6 +70,7 @@ const fakesData: Array<IFakeData> = [
       superficie: randomNotFloor(50000000, 60000000),
       masse: randomNotFloor(50000000, 60000000),
       distanceFromEarth: randomNotFloor(50000000, 60000000),
+      icon: randomIcon()
     },
   },
   {
@@ -70,13 +81,9 @@ const fakesData: Array<IFakeData> = [
       superficie: randomNotFloor(50000000, 60000000),
       masse: randomNotFloor(50000000, 60000000),
       distanceFromEarth: randomNotFloor(50000000, 60000000),
+      icon: randomIcon()
     },
-  },
-  /* { id: 7, name: "Tmploiu", amount: randomNotFloor(50000000, 60000000) },
-  { id: 8, name: "Gwcftui", amount: randomNotFloor(50000000, 60000000) },
-  { id: 9, name: "Xmloiu", amount: randomNotFloor(50000000, 60000000) },
-  { id: 10, name: "Tnuio", amount: randomNotFloor(50000000, 60000000) },
-  { id: 11, name: "Glop", amount: randomNotFloor(50000000, 60000000) }, */
+  }
 ];
 
 export default fakesData;

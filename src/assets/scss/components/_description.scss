@@ -8,7 +8,8 @@
     align-items: center;
     justify-content: space-evenly;
 
-    img{
+    .icon{
+        background-color: color.$green-light;
         width: 500px;
         height: 500px;
         border-radius: 50px;

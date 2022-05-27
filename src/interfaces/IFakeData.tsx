@@ -4,6 +4,7 @@ interface IPlanete{
     superficie: number,
     masse: number,
     distanceFromEarth: number,
+    icon?: string
 }
 
 export default interface IFakeData{

@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import IAsteroid from "../interfaces/IAsteroide";
 
 const SelectedItemContext = React.createContext<any>({});
 const UpdateSelectedItemContext = React.createContext<any>({});
