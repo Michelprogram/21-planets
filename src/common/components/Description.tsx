@@ -2,11 +2,26 @@ import { Asteroid } from "../../constants/Images";
 import { useSelectedItem } from "../../context/SelectedItemContext";
 import IDescription from "../../interfaces/IDescription";
 import { randomNotFloor } from "../../utils/Random";
+import usePanier from "../hooks/panier";
 import ButtonBlue from './Button/ButtonBlue';
 
 
 const Description = ({data, className}:IDescription) => {
     const selectedItem = useSelectedItem();
+    const {add} = usePanier();
+
+    function addToCart(){
+        add({
+            id: 6,
+            planete: {
+              name: data.name_limited,
+              amount: randomNotFloor(50000000, 60000000),
+              superficie: randomNotFloor(50000000, 60000000),
+              masse: randomNotFloor(50000000, 60000000),
+              distanceFromEarth: Math.round(parseInt(data.distance_from_earth)),
+            },
+          });
+    }
 
     return (
         <div className={'description-container '+className}>
@@ -28,7 +43,7 @@ const Description = ({data, className}:IDescription) => {
 
                 <div className='achat'>
                     <p className='prix'>{randomNotFloor(5000, 6000)} $</p>
-                    <ButtonBlue text='Ajouter au panier' link='/panier'/>
+                    <ButtonBlue text='Ajouter au panier' link='/panier' action={addToCart}/>
                 </div>
             </div>
         </div>
