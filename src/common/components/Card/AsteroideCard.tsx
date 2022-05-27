@@ -5,13 +5,11 @@ import { useUpdateSelectedItem } from '../../../context/SelectedItemContext';
 import IAsteroid from '../../../interfaces/IAsteroide';
 
 
-const AsteroideCard = ({name,name_limited, neo_reference_id, estimated_diameter_min, estimated_diameter_max, absolute_magnitude_h, distance_from_earth, velocity}:IAsteroid) => {
+const AsteroideCard = (props:any) => {
 
     const updateSelectedItem = useUpdateSelectedItem();
     function update(){
-        var newData = {name,name_limited, neo_reference_id, estimated_diameter_min, estimated_diameter_max, absolute_magnitude_h, distance_from_earth, velocity}
-
-        updateSelectedItem(newData);
+        updateSelectedItem(props.asteroide_data);
     }
     
     return (
@@ -21,7 +19,7 @@ const AsteroideCard = ({name,name_limited, neo_reference_id, estimated_diameter_
             </div>
             <div className="description">
                 <div>
-                    <p className="title">{name_limited}</p>
+                    <p className="title">{props.asteroide_data.name_limited}</p>
 
                     <Link to="/detail" onClick={update}>
                         <p>Voir plus &gt;</p>

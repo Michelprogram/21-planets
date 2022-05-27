@@ -1,4 +1,5 @@
 export default interface IAsteroid{ 
+    id: string,
     name_limited: string,
     name: string,
     neo_reference_id: string,

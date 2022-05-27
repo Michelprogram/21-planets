@@ -19,12 +19,7 @@ const Propositions = ({className = ""}) => {
             <p className='quote'>“Le temps et l'espace ne sont pas des conditions d'existence, le temps et l'espace sont un modèle de réflexion.” - Gaspard</p>
             <div className="best-propositions">
                 {data.slice(0,4).map((el:any, index:number)=>
-                 <AsteroideCard key={index} name_limited={el.name_limited} name={el.name} neo_reference_id={el.neo_reference_id} 
-                 estimated_diameter_min={el.estimated_diameter.kilometers.estimated_diameter_min} 
-                 estimated_diameter_max={el.estimated_diameter.kilometers.estimated_diameter_max} 
-                 distance_from_earth={el.close_approach_data[0].miss_distance.kilometers} 
-                 absolute_magnitude_h={el.absolute_magnitude_h} 
-                 velocity={el.close_approach_data[0].relative_velocity.kilometers_per_hour}/>)}
+                 <AsteroideCard key={index} asteroide_data={el} />)}
             </div>
         </div>
     );
