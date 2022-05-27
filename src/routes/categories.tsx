@@ -23,11 +23,3 @@ export default [
         }
      </Route>
 ];
-
-
-{/* <Route path='asteroides' element={<Categories title='asteroides'/>}/>
-<Route path='exoplanete' element={<Categories />}/>
-<Route path='sattelites' element={<Categories />}/>
-<Route path='packs' element={<Categories />}/>
-<Route path='cometes' element={<Categories />}/>
-<Route path='etoiles' element={<Categories />}/> */}
