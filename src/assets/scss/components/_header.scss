@@ -3,8 +3,6 @@
 $colors-balls: color.$purple, color.$green-light, color.$blue-light,
   color.$pink-dark, color.$gray, color.$dark-blue;
 
-$i: 0;
-
 .container-header {
   height: 410px;
   position: relative;
@@ -105,9 +103,9 @@ $i: 0;
         transform: translateY(-10px);
       }
 
-      @each $color in $colors-balls {
-        $i: $i + 1;
-        &:nth-child(#{$i}) {
+      @for $index from 1 to length($colors-balls) + 1 {
+        $color: nth($colors-balls, $index);
+        &-#{$index} {
           background-color: $color;
         }
       }

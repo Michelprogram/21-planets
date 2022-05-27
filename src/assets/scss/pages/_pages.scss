@@ -1,3 +1,5 @@
+@use "../variables/colors" as color;
+
 $large: 10%;
 $medium: 8%;
 $little: 5%;
@@ -48,8 +50,8 @@ $little: 5%;
 }
 
 //Support
-.support-{
-  &eclaircissement{
+.support- {
+  &eclaircissement {
     @include marginBetweenComponents($little);
   }
 }
@@ -64,5 +66,32 @@ $little: 5%;
   height: 100%;
   &-card {
     width: 80%;
+  }
+}
+
+//404 Error not found
+
+.container-error-page {
+  height: 800px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: color.$gray2;
+
+  @include marginBetweenComponents($little);
+
+  p {
+    font-size: 2em;
+    letter-spacing: 2px;
+  }
+}
+
+// Categories
+.container-categories-page {
+  .container-title {
+    @include marginBetweenComponents($little);
   }
 }

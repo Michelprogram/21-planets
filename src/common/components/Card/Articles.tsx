@@ -7,6 +7,7 @@ import { random } from '../../../utils/Random';
 import usePanier from '../../hooks/panier';
 
 import { Trash } from '../../../constants/Images';
+import { ReadablePrice } from '../../../utils/String';
 
 const Articles = ({id, planete}: IFakeData) => {
 
@@ -22,7 +23,7 @@ const Articles = ({id, planete}: IFakeData) => {
         <div className='container-article'>
             <img src={randomIcon()} alt="" className="icon" />
             <p className='name'>{planete.name}</p>
-            <p className='amount'>{planete.amount} $</p>
+            <p className='amount'>{ReadablePrice(planete.amount)} $</p>
             <img className="trash" src={Trash} alt="" onClick={ () => remove(id) }/>
         </div>
     );
