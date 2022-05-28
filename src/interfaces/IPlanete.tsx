@@ -1,4 +1,5 @@
-export default interface IPlanete{
-    name: string
-    forme: boolean
+export default interface IPlanete {
+  name: string;
+  forme?: boolean;
+  image?: string;
 }
