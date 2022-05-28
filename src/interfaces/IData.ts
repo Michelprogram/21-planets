@@ -3,4 +3,5 @@ export default interface IData {
   name: string;
   description: string;
   price: number;
+  image: string;
 }
