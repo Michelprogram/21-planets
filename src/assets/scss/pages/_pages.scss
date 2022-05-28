@@ -92,6 +92,9 @@ $little: 5%;
 // Categories
 .container-categories-page {
   .container-title {
-    @include marginBetweenComponents($little);
+    margin-top: $little;
+  }
+  .container-shop-items {
+    margin-bottom: $little;
   }
 }
