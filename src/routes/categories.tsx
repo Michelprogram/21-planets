@@ -16,11 +16,13 @@ const categories: Array<ITitle> = [
 
 export default [
   <Route path="categories">
-    {categories.map((cat: ITitle) => {
+    {categories.map((cat: ITitle, index: number) => {
       return (
         <Route
           path={cat.title}
-          element={<Categories title={cat.title} color={cat.color} />}
+          element={
+            <Categories key={index} title={cat.title} color={cat.color} />
+          }
         />
       );
     })}
