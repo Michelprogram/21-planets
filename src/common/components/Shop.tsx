@@ -5,6 +5,7 @@ import IExoplanete from "../../interfaces/IExoplanete";
 import Planets from "../../common/components/Card/Planets";
 import fetchComete from "../../api/Comete";
 import { Waiting } from "../../constants/Images";
+import fetchVaisseaux from "../../api/Vaisseaux";
 
 const Shop = ({ title }: any) => {
   const [data, setData] = useState<Array<any>>([]);
@@ -30,6 +31,10 @@ const Shop = ({ title }: any) => {
       case "cometes":
         res = data.map((el, index) => <Planets key={index} {...el} />);
         break;
+      case "vaisseaux":
+        res = data.filter((el) => el.links.flickr_images.length > 0)
+                  .map((el, index) => <Planets key={index} name={el.mission_name} image={el.links.flickr_images[0]}/>);
+        break;
       default:
         setData([]);
         break;
@@ -45,6 +50,9 @@ const Shop = ({ title }: any) => {
         break;
       case "cometes":
         fetchComete().then((el) => setData(el));
+        break;
+      case "vaisseaux":
+        fetchVaisseaux().then((el) => setData(el));
         break;
       default:
         setData([]);
