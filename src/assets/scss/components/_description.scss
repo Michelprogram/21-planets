@@ -1,58 +1,77 @@
 @use "../variables/colors" as color;
 
-.description-container{
-    width: auto;
-    height: 600px;
-    background-color: color.$gray2;
+.description-container {
+  width: auto;
+  height: 600px;
+  background-color: color.$gray2;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .img-container {
+    width: 500px;
+    height: 500px;
+    border-radius: 50px;
+    box-shadow: 10px 10px 5px black;
+
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
 
-    .icon{
-        background-color: color.$green-light;
-        width: 500px;
-        height: 500px;
-        border-radius: 50px;
-        box-shadow: 10px 10px 5px black;
+    img {
+      width: 70%;
+      transition: width 0.8s ease-in;
+
+      &:hover {
+        width: 75%;
+      }
+    }
+  }
+
+  .description {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    p:nth-child(1) {
+      font-size: 1.5em;
     }
 
-    .description{
-        width: 500px;
-        height: 500px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
+    .description-detaillee {
+      width: 100%;
+      height: fit-content;
+      padding: 10px;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      background-color: color.$dark-blue;
+      font-size: x-large;
+      display: flex;
+      align-items: center;
 
-        .description-detaillee{
-            width: fit-content;
-            height: fit-content;
-            padding: 10px;
-            border: 2px solid transparent;
-            border-radius: 10px;
-            background-color: color.$dark-blue;
-            font-size: x-large;
-            display: flex;
-            align-items: center;
-
-            ul li {
-                color: white;
-                p{
-                    display: inline;
-                    color: color.$blue-light;
-                }
-            }
+      ul li {
+        color: white;
+        font-size: 1.3em;
+        white-space: nowrap;
+        p {
+          font-size: 0.8em;
+          display: inline;
+          color: color.$blue-light;
         }
-
-        .achat{
-            width: 100%;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-
-            p{
-                font-size: xx-large;
-            }
-        }
+      }
     }
+
+    .achat {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        font-size: xx-large;
+      }
+    }
+  }
 }

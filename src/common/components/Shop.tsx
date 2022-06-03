@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 
-import fetchExoplanete from "../../api/Exoplanete";
-import IExoplanete from "../../interfaces/IExoplanete";
 import Planets from "../../common/components/Card/Planets";
-import fetchComete from "../../api/Comete";
 import { Waiting } from "../../constants/Images";
+import useData from "../hooks/Data";
+import IData from "../../interfaces/IData";
 
 const Shop = ({ title }: any) => {
-  const [data, setData] = useState<Array<any>>([]);
+  const { length, filterByType } = useData();
+
+  const [data, setData] = useState<Array<IData>>([]);
 
   const waitingFetch = (): JSX.Element => {
     return (
@@ -20,50 +21,19 @@ const Shop = ({ title }: any) => {
     );
   };
 
-  const whichCard = (): Array<JSX.Element> => {
-    let res: Array<JSX.Element> = [];
-
-    switch (title) {
-      case "exoplanetes":
-        res = data.map((el, index) => (
-          <Planets key={index} name={el.display_name} image={el.image} />
-        ));
-        break;
-      case "cometes":
-        res = data.map((el, index) => (
-          <Planets key={index} name={el.name} image={el.image} />
-        ));
-        break;
-      default:
-        setData([]);
-        break;
-    }
-
-    return res;
-  };
-
-  const whichData = () => {
-    switch (title) {
-      case "exoplanetes":
-        fetchExoplanete().then((el) => setData(el));
-        break;
-      case "cometes":
-        fetchComete().then((el) => setData(el));
-        break;
-      default:
-        setData([]);
-        break;
-    }
-    return 0;
-  };
-
   useEffect(() => {
-    whichData();
+    setData(filterByType(title));
   }, []);
 
   return (
     <div className="container-shop-items">
-      {data.length == 0 ? waitingFetch() : whichCard()}
+      {length() == 0
+        ? waitingFetch()
+        : data.map((el, index) => {
+            return (
+              <Planets key={index} name={el.name} image={el.image} id={el.id} />
+            );
+          })}
     </div>
   );
 };

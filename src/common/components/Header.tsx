@@ -5,7 +5,7 @@ import { random } from "../../utils/Random";
 import usePanier from "../hooks/panier";
 
 const Header = () => {
-  const { panier, size } = usePanier();
+  const { size } = usePanier();
 
   const location = useLocation();
 

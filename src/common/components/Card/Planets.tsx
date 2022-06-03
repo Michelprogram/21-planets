@@ -1,21 +1,18 @@
 import React from "react";
-import IPlanete from "../../../interfaces/IPlanete";
 import { Link } from "react-router-dom";
-import { useUpdateSelectedItem } from '../../../context/SelectedItemContext';
 
-const Planets = ({ name, forme, image }: IPlanete) => {
-  const updateSelectedItem = useUpdateSelectedItem();
-    function update(){
-        updateSelectedItem(name);
-    }
-
+const Planets = (props: any) => {
   const displayImg = () => {
-    if (image) {
-      return <img className="img-card" src={image} alt="" />;
+    if (props.image) {
+      return <img className="img-card" src={props.image} alt="" />;
     }
     return (
       <div>
-        {forme ? <div className="square"></div> : <div className="round"></div>}
+        {props.forme ? (
+          <div className="square"></div>
+        ) : (
+          <div className="round"></div>
+        )}
       </div>
     );
   };
@@ -25,8 +22,8 @@ const Planets = ({ name, forme, image }: IPlanete) => {
       <div className="top-side">{displayImg()}</div>
       <div className="description">
         <div>
-          <p className="title">{name}</p>
-          <Link to="/detail" onClick={() => update()}>
+          <p className="title">{props.name}</p>
+          <Link to={"/detail/" + props.id}>
             <p>Voir plus &gt;</p>
           </Link>
         </div>

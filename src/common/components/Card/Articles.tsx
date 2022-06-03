@@ -1,28 +1,28 @@
-import React, { useState } from "react";
-import IFakeData from "../../../interfaces/IFakeData";
-
-import { svgIcones as PlanetsSVG, Trash } from "../../../constants/Images";
-import { random } from "../../../utils/Random";
+import { Info, Trash } from "../../../constants/Images";
 
 import usePanier from "../../hooks/panier";
 
 import { ReadablePrice } from "../../../utils/String";
+import IData from "../../../interfaces/IData";
+import { Link } from "react-router-dom";
 
-const Articles = ({ id, planete }: IFakeData) => {
-  const [icons, _] = useState<Array<string>>(PlanetsSVG);
-
+const Articles = ({ id, name, price, image }: IData) => {
   const { remove } = usePanier();
-
-  const randomIcon = (): string => {
-    return icons[random(0, icons.length)];
-  };
 
   return (
     <div className="container-article">
-      <img src={randomIcon()} alt="" className="icon" />
-      <p className="name">{planete.name}</p>
-      <p className="amount">{ReadablePrice(planete.amount)} $</p>
-      <img className="trash" src={Trash} alt="" onClick={() => remove(id)} />
+      <img src={image} alt="" className="icon" />
+      <p className="name">{name}</p>
+      <p className="amount">{ReadablePrice(price)} $</p>
+      <Link to={"/detail/" + id}>
+        <img className="icon-util" src={Info} />
+      </Link>
+      <img
+        className="icon-util"
+        src={Trash}
+        alt=""
+        onClick={() => remove(id)}
+      />
     </div>
   );
 };

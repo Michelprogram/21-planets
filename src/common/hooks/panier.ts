@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import IFakeData from "../../interfaces/IFakeData";
 import { PanierContext } from "../../context/panier";
 import addPlanete from "../../utils/calculations";
+import IData from "../../interfaces/IData";
 
 const usePanier = () => {
   const [panier, setPanier] = useContext(PanierContext);
@@ -14,42 +15,58 @@ const usePanier = () => {
     return panier.length == 0;
   };
 
-  const addArticles = (article: IFakeData): void => {
+  const addArticles = (article: IData): void => {
     panier.push(article);
     setPanier(panier);
   };
 
   const removeArticles = (id: number): void => {
-    setPanier(panier.filter((el: IFakeData) => el.id != id));
+    setPanier(panier.filter((el: IData) => el.id != id));
   };
 
   const totalCost = (): number => {
     if (panier.length < 1) return 0;
-    return addPlanete<IFakeData>(panier, "amount");
+    let res = 0;
+
+    panier.forEach((element: IData) => {
+      res += element.price;
+    });
+
+    return res;
   };
 
   const totalSuperficie = (): number => {
     if (panier.length < 1) return 0;
-    return addPlanete<IFakeData>(panier, "superficie");
+    let res = 0;
+
+    panier.forEach((element: IData) => {
+      res += element.price;
+    });
+
+    return res;
   };
 
   const totalMasse = (): number => {
     if (panier.length < 1) return 0;
 
-    return addPlanete<IFakeData>(panier, "masse");
+    let res = 0;
+
+    panier.forEach((element: IData) => {
+      res += element.price;
+    });
+
+    return res;
   };
 
   const longDist = (): number => {
     if (panier.length < 1) return 0;
 
-    return Math.max(
-      ...panier.map((o: IFakeData) => o.planete.distanceFromEarth)
-    );
+    return Math.max(...panier.map((o: IData) => o.distance_from_earth));
   };
 
-  const planetLong = (): IFakeData => {
+  const planetLong = (): IData => {
     return panier.filter(
-      (el: IFakeData) => el.planete.distanceFromEarth == longDist()
+      (el: IData) => el.distance_from_earth == longDist()
     )[0];
   };
 

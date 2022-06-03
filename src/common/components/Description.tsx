@@ -1,56 +1,48 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import IDescription from "../../interfaces/IDescription";
 import { randomNotFloor } from "../../utils/Random";
 import usePanier from "../hooks/panier";
-import ButtonBlue from './Button/ButtonBlue';
-import DescriptionDetaillee from "./DescriptionDetaillee";
+import ButtonBlue from "./Button/ButtonBlue";
 
+const Description = ({ data, className }: IDescription) => {
+  const [buttonText, setButtonText] = useState("Ajouter au panier");
+  const { add, size } = usePanier();
 
-const Description = ({data, className}:IDescription) => {
-    const [buttonText, setButtonText] = useState("Ajouter au panier");
-    const {add,size} = usePanier();
+  console.log(data);
 
-    //---------------------------------------description data--------------------------------------------------
-    const prix = randomNotFloor(50000,70000);
-    const superficie = (3.14*4*((randomNotFloor(2000,3000))/2)^2)*1000;
-    //---------------------------------------------------------------------------------------------------------
+  return (
+    <div className={"description-container" + className}>
+      <img src={data.image} className="icon" />
 
-    function addToCart(){
-        add({
-            id: size() + 1,
-            planete: {
-              name: data.name_limited,
-              amount: prix,
-              superficie: superficie,
-              masse: randomNotFloor(50000000, 60000000),
-              distanceFromEarth: data.earth_distance,
-              icon: data.icon
-            },
-          });
+      <div className="description">
+        <h1>{data.description}</h1>
 
-          setButtonText("Ajouté !");
-    }
-
-    const getColor = () =>{
-        return {backgroundColor: data.color}
-    }
-
-    return (
-        <div className={'description-container '+className}>
-            <img src={data.icon} className='icon' style={getColor()}/>
-
-            <div className='description'>
-                <h1>{data.name_limited}</h1>
-
-               <DescriptionDetaillee data={data}/>
-
-                <div className='achat'>
-                    <p className='prix'>{prix} $</p>
-                    <ButtonBlue text={buttonText} action={addToCart}/>
-                </div>
-            </div>
+        <div className="description-detaillee">
+          <ul>
+            <li>
+              Nom : <p>{data.name}</p>
+            </li>
+            <li>
+              Size : <p>{data.size}</p>
+            </li>
+            <li>
+              Distance de la Terre : <p>{data.distance_from_earth}</p> km{" "}
+            </li>
+          </ul>
         </div>
-    );
+
+        <div className="achat">
+          <p className="prix">{data.price} $</p>
+          <Link to="" onClick={() => add(data)}>
+            <button type="button" className="button_blue">
+              {buttonText}
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Description;

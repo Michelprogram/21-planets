@@ -1,7 +1,7 @@
 import axios from "axios";
 import IComete from "../interfaces/IComete";
 import { cometes } from "../constants/FlatIcons";
-import { randomItemFromArray } from "../utils/Random";
+import { randomItemFromArray, randomNotFloor } from "../utils/Random";
 
 const API_KEY: string = "lANSons0wGCDOJoLw8UiVXHbPOBEcerR0aCpvqk6";
 const URI: string =
@@ -22,7 +22,14 @@ const fetchComete = async () => {
     Object.values(obj).forEach((el: any) => {
       el = el as Array<any>;
       el.forEach((el: IComete) => {
+        el.size = el.estimated_diameter.meters.estimated_diameter_max;
+        el.description = el.orbital_data.orbit_class.orbit_class_description;
+        el.price = randomNotFloor(150000, 100000);
         el.image = randomItemFromArray(cometes);
+        el.distance_from_earth = parseInt(
+          el.close_approach_data[0].miss_distance.kilometers
+        );
+        el.type = "cometes";
         data.push(el);
       });
     });

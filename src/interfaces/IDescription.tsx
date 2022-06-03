@@ -1,6 +1,7 @@
 import IAsteroid from "./IAsteroide";
+import IData from "./IData";
 
-export default interface IDescription{
-    data:any,
-    className?:string
+export default interface IDescription {
+  data: IData;
+  className?: string;
 }
