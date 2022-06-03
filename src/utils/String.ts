@@ -3,10 +3,16 @@ const UpperFistLetter = (str: string): string => {
 };
 
 const ReadablePrice = (str: string | number): string => {
+  let afterDot: string = "";
+
   if (str == "") return "";
 
-  if (typeof str == 'number'){
-    str = str + ""
+  if (typeof str == "number") {
+    str = str + "";
+  }
+
+  if (str.includes(".")) {
+    [str, afterDot] = str.split(".");
   }
 
   let resultat: string | undefined = str
@@ -17,8 +23,11 @@ const ReadablePrice = (str: string | number): string => {
     ?.join(" ")
     .split("")
     .reverse()
-    .join('')
-    
+    .join("");
+
+  if (afterDot != "" && resultat != undefined) {
+    resultat += "." + afterDot;
+  }
 
   return resultat == undefined ? "" : resultat;
 };
