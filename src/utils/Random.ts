@@ -15,4 +15,14 @@ const randomNotFloorS = (min: number, max: number): string => {
   return (Math.random() * (max - min) + min).toFixed(2);
 };
 
-export { random, randomS, randomNotFloor, randomNotFloorS };
+const randomItemFromArray = (array: Array<any>) => {
+  return array[random(0, array.length)];
+};
+
+export {
+  random,
+  randomS,
+  randomNotFloor,
+  randomNotFloorS,
+  randomItemFromArray,
+};

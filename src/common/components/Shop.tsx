@@ -26,10 +26,14 @@ const Shop = ({ title }: any) => {
 
     switch (title) {
       case "exoplanetes":
-        res = data.map((el, index) => <Planets key={index} {...el} />);
+        res = data.map((el, index) => (
+          <Planets key={index} name={el.display_name} image={el.image} />
+        ));
         break;
       case "cometes":
-        res = data.map((el, index) => <Planets key={index} {...el} />);
+        res = data.map((el, index) => (
+          <Planets key={index} name={el.name} image={el.image} />
+        ));
         break;
       case "vaisseaux":
         res = data.filter((el) => el.links.flickr_images.length > 0)
