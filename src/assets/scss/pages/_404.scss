@@ -1,4 +1,17 @@
-//vers 16h30
+@use "../variables/colors" as color;
+
+.container-error-page {
+  background-color: color.$gray2;
+
+  height: 700px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  img {
+    width: 50%;
+  }
+}
 
 /*
 

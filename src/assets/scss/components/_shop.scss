@@ -9,4 +9,14 @@
   & > * {
     margin: 50px 0;
   }
+
+  .waiting-container {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 3%;
+    img {
+      width: 55%;
+      margin-bottom: 5%;
+    }
+  }
 }

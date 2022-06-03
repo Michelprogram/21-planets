@@ -20,6 +20,7 @@ import Trash from "../assets/images/svg/trash.svg";
 import Uranus from "../assets/images/svg/uranus.svg";
 import Vaporwave from "../assets/images/svg/vaporwave.svg";
 import Venus from "../assets/images/svg/venus.svg";
+import Waiting from "../assets/images/svg/waiting.svg";
 
 const svgIcones = [
   BlackHole,
@@ -55,6 +56,7 @@ export {
   Vaporwave,
   Venus,
   NotFound,
+  Waiting,
   //list
   svgIcones,
 };
