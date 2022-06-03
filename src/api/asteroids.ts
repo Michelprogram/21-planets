@@ -1,7 +1,8 @@
 import axios from "axios";
 import IAsteroide from "../interfaces/IAsteroide";
 import {svgIcones as PlanetsSVG} from "../constants/Images"
-import { random, randomNotFloor } from "../utils/Random";
+import { random, randomItemFromArray, randomNotFloor } from "../utils/Random";
+import { cometes } from "../constants/FlatIcons";
 
 const color:string = "#713cf7";
 const URI:string = "https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=eePZohcvQm8fLcAsRVmgOUZdYbwxGTGa6YbS4oaG"
@@ -17,7 +18,7 @@ const fetchAsteroides = async () => {
 
   try {
     const request = await axios.get(URI);
-    request.data.near_earth_objects.forEach((element: any) => {
+   /* request.data.near_earth_objects.forEach((element: any) => {
       let tmp:IAsteroide = {
         id: element.id,
         asteroide: {
@@ -35,11 +36,14 @@ const fetchAsteroides = async () => {
         }
       }
       data.push(tmp)
+    });*/
+
+    const obj: any = request.data.near_earth_objects;
+    Object.values(obj).forEach((el: any) => {
+      el = el as Array<any>;
+      el.image = randomItemFromArray(cometes);
+      data.push(el);
     });
-
-    
-
-    console.log(data);
 
     return data;
   } catch (err) {

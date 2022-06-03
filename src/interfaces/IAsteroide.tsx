@@ -1,18 +1,26 @@
-interface AsteroideTest{
+import IData from "./IData";
+
+export default interface IAsteroide extends IData{
     name_limited: string,
     name: string,
     neo_reference_id: string,
-    estimated_diameter_min:number,
-    estimated_diameter_max:number,
-    absolute_magnitude_h: number,
-    distance_from_earth: string,
-    velocity:number,
-    superficie: number,
-    icon: string,
-    color: string
-}
-
-export default interface IAsteroid{ 
-    id: string,
-    asteroide: AsteroideTest
+    estimated_diameter: {
+        kilometers: {
+          estimated_diameter_max: number,
+          estimated_diameter_min: number
+        };
+      };
+      close_approach_data: [
+        {
+          relative_velocity: {
+            kilometers_per_hour: string;
+          };
+        },
+        {
+          miss_distance: {
+            kilometers: string;
+          };
+          orbiting_body: string;
+        }
+      ];
 }

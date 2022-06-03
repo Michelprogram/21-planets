@@ -6,6 +6,7 @@ import Planets from "../../common/components/Card/Planets";
 import fetchComete from "../../api/Comete";
 import { Waiting } from "../../constants/Images";
 import fetchVaisseaux from "../../api/Vaisseaux";
+import fetchAsteroides from "../../api/asteroids";
 
 const Shop = ({ title }: any) => {
   const [data, setData] = useState<Array<any>>([]);
@@ -37,7 +38,10 @@ const Shop = ({ title }: any) => {
         break;
       case "vaisseaux":
         res = data.filter((el) => el.links.flickr_images.length > 0)
-                  .map((el, index) => <Planets key={index} name={el.mission_name} image={el.links.flickr_images[0]}/>);
+          .map((el, index) => <Planets key={index} name={el.mission_name} image={el.links.flickr_images[0]} />);
+        break;
+      case "asteroides":
+        res = data.map((el, index) => <Planets key={index} name={el.name_limited} image={el.image} />);
         break;
       default:
         setData([]);
@@ -57,6 +61,9 @@ const Shop = ({ title }: any) => {
         break;
       case "vaisseaux":
         fetchVaisseaux().then((el) => setData(el));
+        break;
+      case "asteroides":
+        fetchAsteroides().then((el) => setData(el));
         break;
       default:
         setData([]);
