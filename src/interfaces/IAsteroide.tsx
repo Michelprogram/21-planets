@@ -7,6 +7,7 @@ interface AsteroideTest{
     absolute_magnitude_h: number,
     distance_from_earth: string,
     velocity:number,
+    superficie: number,
     icon: string,
     color: string
 }

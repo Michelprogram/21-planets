@@ -1,7 +1,7 @@
 import axios from "axios";
 import IAsteroide from "../interfaces/IAsteroide";
 import {svgIcones as PlanetsSVG} from "../constants/Images"
-import { random } from "../utils/Random";
+import { random, randomNotFloor } from "../utils/Random";
 
 const color:string = "#713cf7";
 const URI:string = "https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=eePZohcvQm8fLcAsRVmgOUZdYbwxGTGa6YbS4oaG"
@@ -29,6 +29,7 @@ const fetchAsteroides = async () => {
           absolute_magnitude_h: Math.round(element.absolute_magnitude_h),
           distance_from_earth: Math.round(parseInt(element.close_approach_data[0].miss_distance.kilometers))+"",
           velocity: Math.round(element.close_approach_data[0].relative_velocity.kilometers_per_hour),
+          superficie: (3.14*4*((randomNotFloor(2000,3000))/2)^2)*1000,
           icon: randomIcon(),
           color: color
         }
