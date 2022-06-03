@@ -1,0 +1,30 @@
+@use "../variables/colors" as color;
+
+.container-error-page {
+  background-color: color.$gray2;
+
+  height: 700px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  img {
+    width: 50%;
+  }
+}
+
+/*
+
+présentoire dans les holtels
+dans l'écran , géo, type de feBlendvariété de m
+age de l'apiculteur, cb de temps, principe des POV
+info sur l'hotel (soirée, hotel), destiner hotel haute game,
+quizz, version tactile ????? -> client avec une intéraction,
+Texte, vidéo pas de son !!!
+
+Technique 
+Ipad / Android
+
+Application apiculteur
+
+*/

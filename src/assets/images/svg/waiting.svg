@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 52 12">
+    <circle r="6" transform="translate(6 6)" fill="#49fa95" />
+    <animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.1"></animate>
+    <circle r="6" transform="translate(26 6)" fill="#d6748a" />
+    <animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.2"></animate>
+    <circle r="6" transform="translate(46 6)" fill="#3c52f2" />
+    <animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.3"></animate>
+</svg>

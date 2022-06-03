@@ -6,6 +6,7 @@ import { MasterPlan as Plan } from '../../constants/Images';
 
 import setClassName from '../../utils/ClassName';
 import usePanier from '../hooks/panier';
+import { ReadablePrice } from '../../utils/String';
 
 const Panier = ({className = ""}) => {
 
@@ -41,17 +42,17 @@ const Panier = ({className = ""}) => {
                 <div className="total">
                     <div className="container-inside">
                         <p>Résumé de votre panier</p>
-                        <p>{total()} $</p>
+                        <p>{ReadablePrice(total())} $ </p>
                         <ButtonViolet link="/" text="Acheter" className="button-panier-acheter"/>
                     </div>
                 </div>
                 <div className="statistics">
                     <div className="container-inside">
                         <p className="title">Statistique</p>
-                        <p className="superficie">Superficie total : <span>{superficie()} m3</span></p>
-                        <p className="masse">Masse total : <span>{masse()} T</span></p>
+                        <p className="superficie">Superficie total : <span>{ReadablePrice(superficie())} m3</span></p>
+                        <p className="masse">Masse total : <span>{ReadablePrice(masse())} T</span></p>
                         <p className="far">Planete la plus loin : <span>{size() > 1 ? longest().planete.name : ""}</span></p>
-                        <p className="dist">Distance la plus loin : <span>{dist()} km</span></p>
+                        <p className="dist">Distance la plus loin : <span>{ReadablePrice(dist())} km</span></p>
                     </div>
                 </div>
             </div>

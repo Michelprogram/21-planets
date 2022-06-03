@@ -1,19 +1,30 @@
-import IFakeData from '../../../interfaces/IFakeData';
-import usePanier from '../../hooks/panier';
-import { Trash } from '../../../constants/Images';
+import React, { useState } from "react";
+import IFakeData from "../../../interfaces/IFakeData";
 
-const Articles = ({id, planete}: IFakeData) => {
+import { svgIcones as PlanetsSVG, Trash } from "../../../constants/Images";
+import { random } from "../../../utils/Random";
 
-    const {remove} = usePanier();
+import usePanier from "../../hooks/panier";
 
-    return (
-        <div className='container-article'>
-            <img src={planete.icon} alt="" className="icon" />
-            <p className='name'>{planete.name}</p>
-            <p className='amount'>{planete.amount} $</p>
-            <img className="trash" src={Trash} alt="" onClick={ () => remove(id) }/>
-        </div>
-    );
+import { ReadablePrice } from "../../../utils/String";
+
+const Articles = ({ id, planete }: IFakeData) => {
+  const [icons, _] = useState<Array<string>>(PlanetsSVG);
+
+  const { remove } = usePanier();
+
+  const randomIcon = (): string => {
+    return icons[random(0, icons.length)];
+  };
+
+  return (
+    <div className="container-article">
+      <img src={randomIcon()} alt="" className="icon" />
+      <p className="name">{planete.name}</p>
+      <p className="amount">{ReadablePrice(planete.amount)} $</p>
+      <img className="trash" src={Trash} alt="" onClick={() => remove(id)} />
+    </div>
+  );
 };
 
 export default Articles;

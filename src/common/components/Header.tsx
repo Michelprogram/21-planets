@@ -1,14 +1,13 @@
 import React, { useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import {svgIcones as PlanetsSVG} from "../../constants/Images";
+import { svgIcones as PlanetsSVG } from "../../constants/Images";
 import { random } from "../../utils/Random";
 import usePanier from "../hooks/panier";
 
 const Header = () => {
-
   const { panier, size } = usePanier();
 
-  const location = useLocation()
+  const location = useLocation();
 
   const setFavicon = (): void => {
     const favicon = document.getElementById(
@@ -19,28 +18,30 @@ const Header = () => {
     }
   };
 
-  const displayPanier = () =>{
-    if(size() >= 1){
+  const displayPanier = () => {
+    if (size() >= 1) {
       return (
         <li className="cart-info">
           <p className="size-info">{size()}</p>
           <p>Panier</p>
         </li>
-      )
+      );
     } else {
-      return(
+      return (
         <li className="cart-info">
-          <p>Panier <span className={iconOnLocation("panier")}>🛒 </span></p>
+          <p>
+            Panier <span className={iconOnLocation("panier")}>🛒 </span>
+          </p>
         </li>
-      )
+      );
     }
-  }
+  };
 
-  const iconOnLocation = (expected: string) :string =>{
-    return "/"+expected == location.pathname ? "icons-active" : "icons";
-  }
+  const iconOnLocation = (expected: string): string => {
+    return "/" + expected == location.pathname ? "icons-active" : "icons";
+  };
 
-  useEffect(() => setFavicon, []);
+  useEffect(() => setFavicon(), []);
 
   return (
     <div className="container-header">
@@ -83,13 +84,31 @@ const Header = () => {
           </li>
         </NavLink>
       </div>
+
       <div className="container-balls">
-        <div className="ball"></div>
-        <div className="ball"></div>
-        <div className="ball"></div>
-        <div className="ball"></div>
-        <div className="ball"></div>
-        <div className="ball"></div>
+        <NavLink to={"/categories/asteroides"}>
+          <div className="ball-1 ball"></div>
+        </NavLink>
+
+        <NavLink to={"/categories/exoplanetes"}>
+          <div className="ball-2 ball"></div>
+        </NavLink>
+
+        <NavLink to={"/categories/sattelites"}>
+          <div className="ball-3 ball"></div>
+        </NavLink>
+
+        <NavLink to={"/categories/packs"}>
+          <div className="ball-4 ball"></div>
+        </NavLink>
+
+        <NavLink to={"/categories/cometes"}>
+          <div className="ball-5 ball"></div>
+        </NavLink>
+
+        <NavLink to={"/categories/etoiles"}>
+          <div className="ball-6 ball"></div>
+        </NavLink>
       </div>
     </div>
   );
