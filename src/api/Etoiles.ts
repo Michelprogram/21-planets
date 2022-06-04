@@ -1,8 +1,9 @@
 import axios from "axios";
 import IComete from "../interfaces/IComete";
 import { cometes, etoiles } from "../constants/FlatIcons";
-import { randomItemFromArray } from "../utils/Random";
+import { randomItemFromArray, randomNotFloor } from "../utils/Random";
 import IEtoile from "../interfaces/IEtoile";
+import fetchApi from "../utils/Api";
 
 const URI: string = "https://exoplanets.nasa.gov/api/v1/stars/?order=display_name+asc&per_page=25&page=0&search=";
 let data: Array<IEtoile> = [];
@@ -12,14 +13,16 @@ const fetchEtoiles = async () => {
   data = [];
 
   try {
-    const request = await axios.get(URI);
+    data = await fetchApi<IEtoile>(URI, data, "items");
 
-    const obj: any = request.data.items;
-
-    Object.values(obj).forEach((el: any) => {
-      el = el as Array<any>;
+    data.forEach((el) => {
+      el.name = el.display_name;
+      el.size = randomNotFloor(500, 600);
+      el.description = el.display_name;
+      el.price = randomNotFloor(500000, 600000);
       el.image = randomItemFromArray(etoiles);
-      data.push(el);
+      el.distance_from_earth = randomNotFloor(500, 600);
+      el.type = "etoiles";
     });
 
     return data;
