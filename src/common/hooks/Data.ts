@@ -1,9 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { DataContext } from "../../context/Data";
 import IData from "../../interfaces/IData";
 
 const useData = () => {
-  const [apiData, setApiData] = useContext(DataContext);
+  const apiData = useContext(DataContext);
 
   const length = (): number => {
     return apiData.length;
@@ -24,7 +24,6 @@ const useData = () => {
 
   return {
     apiData,
-    setApiData,
     length,
     getById,
     filterByType,

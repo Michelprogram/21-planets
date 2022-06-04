@@ -1,44 +1,30 @@
-import React, { useEffect, useState } from "react";
-
-import Planets from "../../common/components/Card/Planets";
+import Item from "./Card/Item";
 import { Waiting } from "../../constants/Images";
 import useData from "../hooks/Data";
 import IData from "../../interfaces/IData";
 
 const Shop = ({ title }: any) => {
-  const { filterByType } = useData();
+  const { apiData, filterByType } = useData();
 
-  const [data, setData] = useState<Array<IData>>([]);
-
-  const waitingFetch = (): JSX.Element => {
+  if (!apiData) {
     return (
-      <div className="waiting-container">
-        <img src={Waiting} alt="" />
-        <p>
-          Patientez pendant que nous cherchons vos données à travers le cosmos
-        </p>
+      <div className="container-shop-items">
+        {" "}
+        <div className="waiting-container">
+          <img src={Waiting} alt="" />
+          <p>
+            Patientez pendant que nous cherchons vos données à travers le cosmos
+          </p>
+        </div>
       </div>
     );
-  };
-
-  useEffect(() => {
-    setData(filterByType(title));
-  }, []);
+  }
 
   return (
     <div className="container-shop-items">
-      {data.map((el, index) => {
-        return (
-          <Planets key={index} name={el.name} image={el.image} id={el.id} />
-        );
+      {filterByType(title).map((el: IData, index: number) => {
+        return <Item key={index} name={el.name} image={el.image} id={el.id} />;
       })}
-      {/*       {data.length == 0
-        ? waitingFetch()
-        : data.map((el, index) => {
-            return (
-              <Planets key={index} name={el.name} image={el.image} id={el.id} />
-            );
-          })} */}
     </div>
   );
 };

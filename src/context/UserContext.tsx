@@ -11,7 +11,7 @@ export const useUpdateUser = () => {
   return useContext(UpdateUserContext);
 };
 
-export const UserProvider = ({value, children}:any) => {
+export const UserProvider = ({ value, children }: any) => {
   const [user, setUser] = useState(value);
 
   return (

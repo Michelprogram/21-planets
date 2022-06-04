@@ -1,14 +1,11 @@
-import React, { useState, createContext, useMemo, useEffect } from "react";
+import { useState, createContext, useMemo, useEffect } from "react";
 import fetchAsteroides from "../api/asteroids";
 import fetchComete from "../api/Comete";
 import fetchExoplanete from "../api/Exoplanete";
 import fetchVaisseaux from "../api/Vaisseaux";
-import IComete from "../interfaces/IComete";
-import IExoplanete from "../interfaces/IExoplanete";
+import IData from "../interfaces/IData";
 
-export const DataContext = createContext<any>({});
-
-const fetchAllData = async (): Promise<any[]> => {
+const initData = async (): Promise<any[]> => {
   const exoplanetes = await fetchExoplanete();
   const cometes = await fetchComete();
   const asteroides = await fetchAsteroides();
@@ -24,20 +21,16 @@ const fetchAllData = async (): Promise<any[]> => {
   return array;
 };
 
-export const DataProvider = (props: any) => {
-  const [data, setData] = useState<Array<IExoplanete>>([]);
+export const DataContext = createContext<any>({});
 
-  const setDataApi = () => {
-    fetchAllData().then((el) => setData(el));
-  };
+export const DataProvider = ({ value, children }: any) => {
+  const [data, setData] = useState<Array<IData>>(value);
+
   useEffect(() => {
-    setDataApi();
+    initData().then((el: any) => {
+      setData(el);
+    });
   }, []);
 
-  const value_1 = useMemo(() => [data, setData], [data, setData]);
-  return (
-    <DataContext.Provider value={value_1}>
-      {props.children}
-    </DataContext.Provider>
-  );
+  return <DataContext.Provider value={data}>{children}</DataContext.Provider>;
 };
