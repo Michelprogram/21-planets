@@ -24,4 +24,17 @@ const cometes: Array<string> = [
   "https://cdn-icons-png.flaticon.com/512/2534/2534248.png",
 ];
 
-export { planets, cometes };
+const etoiles: Array<string> = [
+  "https://cdn-icons-png.flaticon.com/512/433/433861.png",
+  "https://cdn-icons-png.flaticon.com/512/1146/1146296.png",
+  "https://cdn-icons-png.flaticon.com/512/1146/1146253.png",
+  "https://cdn-icons-png.flaticon.com/512/979/979534.png",
+  "https://cdn-icons-png.flaticon.com/512/3892/3892304.png",
+  "https://cdn-icons-png.flaticon.com/512/997/997067.png",
+  "https://cdn-icons-png.flaticon.com/512/2698/2698240.png",
+  "https://cdn-icons-png.flaticon.com/512/2698/2698235.png",
+  "https://cdn-icons-png.flaticon.com/512/3062/3062008.png",
+  "https://cdn-icons-png.flaticon.com/512/3061/3061864.png"
+];
+
+export { planets, cometes, etoiles};
