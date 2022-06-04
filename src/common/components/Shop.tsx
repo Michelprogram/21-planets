@@ -6,7 +6,7 @@ import useData from "../hooks/Data";
 import IData from "../../interfaces/IData";
 
 const Shop = ({ title }: any) => {
-  const { length, filterByType } = useData();
+  const { filterByType } = useData();
 
   const [data, setData] = useState<Array<IData>>([]);
 
@@ -27,7 +27,7 @@ const Shop = ({ title }: any) => {
 
   return (
     <div className="container-shop-items">
-      {length() == 0
+      {data.length == 0
         ? waitingFetch()
         : data.map((el, index) => {
             return (

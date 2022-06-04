@@ -34,6 +34,11 @@ const Detail = () => {
     };
   };
 
+  const clickAddCart = () => {
+    add(item);
+    setButtonText("Article ajouté !");
+  };
+
   return (
     <div className="description-container shop-description">
       <div className="img-container" style={getBackgroundColor(item.type)}>
@@ -49,10 +54,10 @@ const Detail = () => {
               Nom : <p>{item.name}</p>
             </li>
             <li>
-              Size : <p>{ReadablePrice(item.size)}</p>
+              Size : <p>{ReadablePrice(item.size)} km</p>
             </li>
             <li>
-              Distance de la Terre :
+              Distance de la Terre :{" "}
               <p>{ReadablePrice(item.distance_from_earth)} km</p>
             </li>
           </ul>
@@ -60,7 +65,7 @@ const Detail = () => {
 
         <div className="achat">
           <p className="prix">{ReadablePrice(item.price)} $</p>
-          <Link to="" onClick={() => add(item)}>
+          <Link to="" onClick={clickAddCart}>
             <button type="button" className="button_blue">
               {buttonText}
             </button>

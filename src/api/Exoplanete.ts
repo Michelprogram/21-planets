@@ -18,7 +18,7 @@ const fetchExoplanete = async () => {
     const request = await axios.get(URI);
     request.data.items.forEach((element: any) => data.push(element));
     data.forEach((el: IExoplanete) => {
-      el.size = el.pl_radj;
+      el.size = el.pl_radj * JUPITER_RAYON;
       el.name = el.display_name;
       el.price = randomNotFloor(0, 1000000);
       el.image = randomItemFromArray(planets);
