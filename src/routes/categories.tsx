@@ -20,6 +20,7 @@ export default [
       return (
         <Route
           path={cat.title}
+          key={index}
           element={
             <Categories key={index} title={cat.title} color={cat.color} />
           }
