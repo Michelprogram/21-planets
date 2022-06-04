@@ -94,7 +94,7 @@ const Header = () => {
           <div className="ball-2 ball"></div>
         </NavLink>
 
-        <NavLink to={"/categories/sattelites"}>
+        <NavLink to={"/categories/vaisseaux"}>
           <div className="ball-3 ball"></div>
         </NavLink>
 
