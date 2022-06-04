@@ -1,7 +1,4 @@
-import React, { useContext, useState } from "react";
-import IFakeData from "../../interfaces/IFakeData";
-import { PanierContext } from "../../context/panier";
-import addPlanete from "../../utils/calculations";
+import { useContext } from "react";
 import { DataContext } from "../../context/Data";
 import IData from "../../interfaces/IData";
 

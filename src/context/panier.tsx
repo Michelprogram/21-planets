@@ -1,5 +1,4 @@
 import React, { useState, createContext, useMemo } from "react";
-import articles from "../constants/fakeData";
 import IData from "../interfaces/IData";
 
 export const PanierContext = createContext<any>({});

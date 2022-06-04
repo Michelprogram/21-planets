@@ -27,13 +27,18 @@ const Shop = ({ title }: any) => {
 
   return (
     <div className="container-shop-items">
-      {data.length == 0
+      {data.map((el, index) => {
+        return (
+          <Planets key={index} name={el.name} image={el.image} id={el.id} />
+        );
+      })}
+      {/*       {data.length == 0
         ? waitingFetch()
         : data.map((el, index) => {
             return (
               <Planets key={index} name={el.name} image={el.image} id={el.id} />
             );
-          })}
+          })} */}
     </div>
   );
 };

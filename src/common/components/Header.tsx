@@ -3,7 +3,6 @@ import { NavLink, useLocation } from "react-router-dom";
 import { svgIcones as PlanetsSVG } from "../../constants/Images";
 import { random } from "../../utils/Random";
 import usePanier from "../hooks/panier";
-
 const Header = () => {
   const { size } = usePanier();
 

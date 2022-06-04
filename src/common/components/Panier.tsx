@@ -1,5 +1,4 @@
 import ButtonViolet from "./Button/ButtonViolet";
-import IFakeData from "../../interfaces/IFakeData";
 import Articles from "./Card/Articles";
 
 import { MasterPlan as Plan } from "../../constants/Images";
@@ -10,7 +9,7 @@ import { ReadablePrice } from "../../utils/String";
 import IData from "../../interfaces/IData";
 
 const Panier = ({ className = "" }) => {
-  const { panier, total, size, superficie, masse, dist, longest } = usePanier();
+  const { panier, total, size, superficie, dist, longest } = usePanier();
 
   const heightValue = () => {
     return { height: 100 * size() + "px" };
@@ -52,10 +51,7 @@ const Panier = ({ className = "" }) => {
           <div className="container-inside">
             <p className="title">Statistique</p>
             <p className="superficie">
-              Superficie total : <span>{ReadablePrice(superficie())} m3</span>
-            </p>
-            <p className="masse">
-              Masse total : <span>{ReadablePrice(masse())} T</span>
+              Size total : <span>{ReadablePrice(superficie())}</span>
             </p>
             <p className="far">
               Planete la plus loin :{" "}

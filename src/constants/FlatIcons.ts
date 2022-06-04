@@ -24,4 +24,13 @@ const cometes: Array<string> = [
   "https://cdn-icons-png.flaticon.com/512/2534/2534248.png",
 ];
 
-export { planets, cometes };
+const rockets: Array<string> = [
+  "https://cdn-icons-png.flaticon.com/512/1055/1055646.png",
+  "https://cdn-icons-png.flaticon.com/512/7202/7202291.png",
+  "https://cdn-icons-png.flaticon.com/512/7636/7636322.png",
+  "https://cdn-icons-png.flaticon.com/512/214/214358.png",
+  "https://cdn-icons-png.flaticon.com/512/3204/3204744.png",
+  "https://cdn-icons-png.flaticon.com/512/1702/1702046.png",
+];
+
+export { planets, cometes, rockets };

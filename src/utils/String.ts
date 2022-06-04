@@ -5,7 +5,7 @@ const UpperFistLetter = (str: string): string => {
 const ReadablePrice = (str: string | number): string => {
   let afterDot: string = "";
 
-  if (str == "") return "";
+  if (str == "") return "0";
 
   if (typeof str == "number") {
     str = str + "";

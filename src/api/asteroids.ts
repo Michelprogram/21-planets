@@ -27,6 +27,16 @@ const fetchAsteroides = async () => {
       data.push(el);
     });
 
+    data.forEach((el) => {
+      el.size = el.estimated_diameter.kilometers.estimated_diameter_max;
+      el.description = el.orbital_data.orbit_class.orbit_class_description;
+      el.price = randomNotFloor(10000, 50000);
+      el.distance_from_earth = parseInt(
+        el.close_approach_data[1].miss_distance.kilometers
+      );
+      el.type = "asteroides";
+    });
+
     return data;
   } catch (err) {
     console.warn("Problème lors du fetch à l'api des asteroides : ", err);

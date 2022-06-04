@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import useData from "../common/hooks/Data";
@@ -6,22 +6,31 @@ import usePanier from "../common/hooks/panier";
 import IData from "../interfaces/IData";
 import ITitle from "../interfaces/ITitle";
 import { ReadablePrice } from "../utils/String";
+import { Navigate } from "react-router-dom";
 
 const Detail = () => {
   const [buttonText, setButtonText] = useState("Ajouter au panier");
+  const [id, setId] = useState<number>(parseInt(useParams().productId!));
+
+  const [item, setItem] = useState<IData>({
+    id: 0,
+    size: 0,
+    name: "",
+    description: "",
+    price: 0,
+    image: "",
+    distance_from_earth: 0,
+    type: "",
+  });
+
   const { add, size } = usePanier();
-
   const { getById } = useData();
-
-  const id: number = parseInt(useParams().productId!);
-
-  const item: IData = getById(id);
 
   const getBackgroundColor = (type: string) => {
     const categories: Array<ITitle> = [
       { title: "asteroides", color: "#713cf7" },
       { title: "exoplanetes", color: "#49fa95" },
-      { title: "sattelites", color: "#50bec2" },
+      { title: "vaisseaux", color: "#50bec2" },
       { title: "packs", color: "#d6748a" },
       { title: "cometes", color: "#adbdbb" },
       { title: "etoiles", color: "#1d2a47" },
@@ -38,6 +47,16 @@ const Detail = () => {
     add(item);
     setButtonText("Article ajouté !");
   };
+
+  useEffect(() => {
+    const item: IData = getById(id);
+
+    /*    if (item == undefined) {
+      <Navigate to={"*"} />;
+    } */
+
+    setItem(item);
+  }, []);
 
   return (
     <div className="description-container shop-description">

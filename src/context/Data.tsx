@@ -1,6 +1,8 @@
 import React, { useState, createContext, useMemo, useEffect } from "react";
+import fetchAsteroides from "../api/asteroids";
 import fetchComete from "../api/Comete";
 import fetchExoplanete from "../api/Exoplanete";
+import fetchVaisseaux from "../api/Vaisseaux";
 import IComete from "../interfaces/IComete";
 import IExoplanete from "../interfaces/IExoplanete";
 
@@ -9,11 +11,15 @@ export const DataContext = createContext<any>({});
 const fetchAllData = async (): Promise<any[]> => {
   const exoplanetes = await fetchExoplanete();
   const cometes = await fetchComete();
+  const asteroides = await fetchAsteroides();
+  const vaisseaux = await fetchVaisseaux();
 
-  const array = [...exoplanetes, ...cometes].map((el, index) => {
-    el.id = index;
-    return el;
-  });
+  const array = [...exoplanetes, ...cometes, ...asteroides, ...vaisseaux].map(
+    (el, index) => {
+      el.id = index;
+      return el;
+    }
+  );
 
   return array;
 };

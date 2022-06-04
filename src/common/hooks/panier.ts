@@ -1,8 +1,7 @@
-import React, { useContext, useState } from "react";
-import IFakeData from "../../interfaces/IFakeData";
+import { useContext } from "react";
 import { PanierContext } from "../../context/panier";
-import addPlanete from "../../utils/calculations";
 import IData from "../../interfaces/IData";
+import sumFields from "../../utils/calculations";
 
 const usePanier = () => {
   const [panier, setPanier] = useContext(PanierContext);
@@ -25,37 +24,14 @@ const usePanier = () => {
   };
 
   const totalCost = (): number => {
-    if (panier.length < 1) return 0;
-    let res = 0;
-
-    panier.forEach((element: IData) => {
-      res += element.price;
-    });
-
-    return res;
+    if (panier.length == 0) return 0;
+    return sumFields<IData>(panier, "price");
   };
 
-  const totalSuperficie = (): number => {
-    if (panier.length < 1) return 0;
-    let res = 0;
-
-    panier.forEach((element: IData) => {
-      res += element.price;
-    });
-
-    return res;
-  };
-
-  const totalMasse = (): number => {
+  const totalSize = (): number => {
     if (panier.length < 1) return 0;
 
-    let res = 0;
-
-    panier.forEach((element: IData) => {
-      res += element.price;
-    });
-
-    return res;
+    return sumFields<IData>(panier, "size");
   };
 
   const longDist = (): number => {
@@ -74,8 +50,7 @@ const usePanier = () => {
     panier: panier,
     setPanier,
     size: numberArticles,
-    superficie: totalSuperficie,
-    masse: totalMasse,
+    superficie: totalSize,
     dist: longDist,
     longest: planetLong,
     isEmpty,
