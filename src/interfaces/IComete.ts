@@ -13,8 +13,7 @@ export default interface IComete extends IData {
       relative_velocity: {
         kilometers_per_hour: string;
       };
-    },
-    {
+
       miss_distance: {
         kilometers: string;
       };

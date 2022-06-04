@@ -5,8 +5,8 @@ export default interface IExoplanete extends IData {
   description: string;
   discovery_date: string;
   planet_type: string;
-  image: string;
   subtitle: string;
   st_dist: number;
   pl_massj: number;
+  pl_radj: number;
 }
