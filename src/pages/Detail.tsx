@@ -23,7 +23,7 @@ const Detail = () => {
     type: "",
   });
 
-  const { add, size } = usePanier();
+  const { add } = usePanier();
   const { getById } = useData();
 
   const getBackgroundColor = (type: string) => {
