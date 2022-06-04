@@ -10,7 +10,7 @@ const URI: string =
 
 let data: Array<IComete> = [];
 
-const fetchComete = async () => {
+const fetchComete = async (): Promise<IComete[]> => {
   if (data.length > 0) return data;
   data = [];
 
