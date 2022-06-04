@@ -8,10 +8,10 @@ const Title = ({ title, color }: ITitle) => {
 
   return (
     <div className="container-title">
-      <p>
-        {UpperFistLetter(title)}
-        <hr style={getColor()} />
-      </p>
+      <div>
+        <p>{UpperFistLetter(title)}</p>
+        <div className="hr" style={getColor()}></div>
+      </div>
     </div>
   );
 };
