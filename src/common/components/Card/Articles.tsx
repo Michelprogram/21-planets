@@ -5,12 +5,17 @@ import usePanier from "../../hooks/panier";
 import { ReadablePrice } from "../../../utils/String";
 import IData from "../../../interfaces/IData";
 import { Link } from "react-router-dom";
+import getColor from "../../../constants/ColorPalette";
 
-const Articles = ({ id, name, price, image }: IData) => {
+const Articles = ({ id, name, price, image,type }: IData) => {
   const { remove } = usePanier();
 
+  const getBackgroundColor = () =>{
+    return { backgroundColor: getColor(type) };
+  } 
+
   return (
-    <div className="container-article">
+    <div className="container-article" style={getBackgroundColor()}>
       <img src={image} alt="" className="icon" />
       <p className="name">{name}</p>
       <p className="amount">{ReadablePrice(price)} $</p>
