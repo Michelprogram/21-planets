@@ -17,9 +17,13 @@ const Planets = (props: any) => {
     );
   };
 
+  const getColor = () =>{
+    return { backgroundColor: props.color };
+  } 
+
   return (
     <div className="container-card-planete">
-      <div className="top-side">{displayImg()}</div>
+      <div className="top-side" style={getColor()}>{displayImg()}</div>
       <div className="description">
         <div>
           <p className="title">{props.name}</p>

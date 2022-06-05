@@ -2,6 +2,7 @@ import Item from "./Card/Item";
 import { Waiting } from "../../constants/Images";
 import useData from "../hooks/Data";
 import IData from "../../interfaces/IData";
+import getColor from "../../constants/ColorPalette";
 
 const Shop = ({ title }: any) => {
   const { apiData, filterByType } = useData();
@@ -23,7 +24,7 @@ const Shop = ({ title }: any) => {
   return (
     <div className="container-shop-items">
       {filterByType(title).map((el: IData, index: number) => {
-        return <Item key={index} name={el.name} image={el.image} id={el.id} />;
+        return <Item key={index} name={el.name} image={el.image} color={getColor(title)} id={el.id} />;
       })}
     </div>
   );

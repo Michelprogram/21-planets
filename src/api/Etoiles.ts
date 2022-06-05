@@ -1,6 +1,4 @@
-import axios from "axios";
-import IComete from "../interfaces/IComete";
-import { cometes, etoiles } from "../constants/FlatIcons";
+import { etoiles } from "../constants/FlatIcons";
 import { randomItemFromArray, randomNotFloor } from "../utils/Random";
 import IEtoile from "../interfaces/IEtoile";
 import fetchApi from "../utils/Api";
