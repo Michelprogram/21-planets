@@ -14,4 +14,4 @@ const getColor = (title:string):string => {
     return filteredCat[0].color
   };
 
-export default getColor;
+export {categories, getColor};

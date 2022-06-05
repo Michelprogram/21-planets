@@ -2,7 +2,7 @@ import Item from "./Card/Item";
 import { Waiting } from "../../constants/Images";
 import useData from "../hooks/Data";
 import IData from "../../interfaces/IData";
-import getColor from "../../constants/ColorPalette";
+import {getColor} from "../../constants/ColorPalette";
 
 const Shop = ({ title }: any) => {
   const { apiData, filterByType } = useData();

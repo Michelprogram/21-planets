@@ -5,7 +5,7 @@ import usePanier from "../../hooks/panier";
 import { ReadablePrice } from "../../../utils/String";
 import IData from "../../../interfaces/IData";
 import { Link } from "react-router-dom";
-import getColor from "../../../constants/ColorPalette";
+import {getColor} from "../../../constants/ColorPalette";
 
 const Articles = ({ id, name, price, image,type }: IData) => {
   const { remove } = usePanier();

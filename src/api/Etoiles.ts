@@ -13,13 +13,13 @@ const fetchEtoiles = async () => {
   try {
     data = await fetchApi<IEtoile>(URI, data, "items");
 
-    data.forEach((el) => {
+    data.forEach((el:any) => {
       el.name = el.display_name;
-      el.size = randomNotFloor(500, 600);
+      el.size = el.system_radius;
       el.description = el.display_name;
       el.price = randomNotFloor(500000, 600000);
       el.image = randomItemFromArray(etoiles);
-      el.distance_from_earth = randomNotFloor(500, 600);
+      el.distance_from_earth = el.st_dist;
       el.type = "etoiles";
     });
 

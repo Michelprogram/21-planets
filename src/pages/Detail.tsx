@@ -7,10 +7,12 @@ import IData from "../interfaces/IData";
 import ITitle from "../interfaces/ITitle";
 import { ReadablePrice } from "../utils/String";
 import { Navigate } from "react-router-dom";
+import {getColor} from "../constants/ColorPalette";
 
 const Detail = () => {
   const [buttonText, setButtonText] = useState("Ajouter au panier");
   const [id, setId] = useState<number>(parseInt(useParams().productId!));
+  const [color,setColor] = useState<string>("");
 
   const [item, setItem] = useState<IData>({
     id: 0,
@@ -26,23 +28,6 @@ const Detail = () => {
   const { add } = usePanier();
   const { getById } = useData();
 
-  const getBackgroundColor = (type: string) => {
-    const categories: Array<ITitle> = [
-      { title: "asteroides", color: "#713cf7" },
-      { title: "exoplanetes", color: "#49fa95" },
-      { title: "vaisseaux", color: "#50bec2" },
-      { title: "packs", color: "#d6748a" },
-      { title: "cometes", color: "#adbdbb" },
-      { title: "etoiles", color: "#1d2a47" },
-    ];
-
-    const res = categories.find((el) => el.title == type);
-
-    return {
-      backgroundColor: res?.color,
-    };
-  };
-
   const clickAddCart = () => {
     add(item);
     setButtonText("Article ajouté !");
@@ -56,11 +41,17 @@ const Detail = () => {
     } */
 
     setItem(item);
+    setColor(getColor(item.type));
   }, []);
+
+
+ const getBackgroundColor = () =>{
+      return { backgroundColor: color };
+  } 
 
   return (
     <div className="description-container shop-description">
-      <div className="img-container" style={getBackgroundColor(item.type)}>
+      <div className="img-container" style={getBackgroundColor()}>
         <img src={item.image} className="img" />
       </div>
 
@@ -73,7 +64,7 @@ const Detail = () => {
               Nom : <p>{item.name}</p>
             </li>
             <li>
-              Size : <p>{ReadablePrice(item.size)} km</p>
+              Taille : <p>{ReadablePrice(item.size)} km</p>
             </li>
             <li>
               Distance de la Terre :{" "}
