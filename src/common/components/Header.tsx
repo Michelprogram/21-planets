@@ -87,26 +87,32 @@ const Header = () => {
       <div className="container-balls">
         <NavLink to={"/categories/asteroides"}>
           <div className="ball-1 ball"></div>
+          <p className="description-1 description">Asteroides</p>
         </NavLink>
 
         <NavLink to={"/categories/exoplanetes"}>
           <div className="ball-2 ball"></div>
+          <p className="description-2 description">Exoplanetes</p>
         </NavLink>
 
         <NavLink to={"/categories/vaisseaux"}>
           <div className="ball-3 ball"></div>
+          <p className="description-3 description">Vaisseaux</p>
         </NavLink>
 
         <NavLink to={"/categories/packs"}>
           <div className="ball-4 ball"></div>
+          <p className="description-4 description">Packs</p>
         </NavLink>
 
         <NavLink to={"/categories/cometes"}>
           <div className="ball-5 ball"></div>
+          <p className="description-5 description">Cometes</p>
         </NavLink>
 
         <NavLink to={"/categories/etoiles"}>
           <div className="ball-6 ball"></div>
+          <p className="description-6 description">Etoiles</p>
         </NavLink>
       </div>
     </div>
