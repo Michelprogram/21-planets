@@ -33,7 +33,6 @@ const createPacks = (array:Array<IData>) => {
     let randomIndexes: Array<number> = [];
     let randomIndex: number;
     let totalArticles = array.length;
-    let randomArticles: Array<IData> = [];
     let pack:IData;
 
     //choix des articles
@@ -71,7 +70,6 @@ const createPacks = (array:Array<IData>) => {
       }
  
       pack.id = totalArticles+(i);
-      randomArticles.push(pack);
       array.push(pack);
     }
 
