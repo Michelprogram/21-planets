@@ -39,7 +39,7 @@ const createPacks = (array:Array<IData>) => {
     for (let i = 0; i < nbPacks; i++) {
 
       //initialisation du pack
-      pack = {id: 0, size: 0, name: "", description: "", price: 0, image: "", distance_from_earth: 0, type: "packs"}
+      pack = {id: 0, size: 0, name: "", description: "Le pack interstellaire : ", price: 0, image: "", distance_from_earth: 0, type: "packs"}
 
       //remplissage du pack
       for (let j = 0; j < articlesParPack; j++) {
@@ -56,7 +56,7 @@ const createPacks = (array:Array<IData>) => {
         pack.size += randomArticle.size;
         pack.name += randomArticle.name;
         pack.image += randomArticle.image;
-        pack.description += randomArticle.type;
+        pack.description += randomArticle.type.slice(0,-1);
 
         if(randomArticle.distance_from_earth > pack.distance_from_earth){
           pack.distance_from_earth += randomArticle.distance_from_earth;

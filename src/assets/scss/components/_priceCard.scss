@@ -11,14 +11,22 @@
     margin-left: 50px;
     margin-right: 50px;
 
-    img{
-        width: 80px;
+    .logos{
         height: 80px;
+
+        .logo-normal{
+            width: 70px;
+            height: 70px;
+        }
+        
+        .logo-pack{
+            width: 60px;
+            height: auto;
+        }
     }
 
     ul li, p{
         list-style-type: disc;
-        //margin: 10px;
         color: grey;
     }
 
