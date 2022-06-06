@@ -25,15 +25,16 @@ const useData = () => {
     return apiData.filter((el: IData) => el.type == type);
   };
 
-  const propositionsItem = (quantity:number, type?:string): Array<IData> => {
+  const propositionsItem = (quantity: number, type?: string): Array<IData> => {
     if (propositions.length > 0) {
       return propositions;
     }
 
     let items: Array<IData>;
-    if(type){
+
+    if (type) {
       items = filterByType(type);
-    }else{
+    } else {
       items = apiData;
     }
     const result: Array<IData> = [];

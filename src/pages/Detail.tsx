@@ -25,7 +25,7 @@ const Detail = () => {
   });
 
   const { add } = usePanier();
-  const { getById } = useData();
+  const { apiData, getById } = useData();
 
   const clickAddCart = () => {
     add(item);
@@ -38,26 +38,28 @@ const Detail = () => {
 
   useEffect(() => {
     const item: IData = getById(id);
+    console.log("Get by id", item);
+    console.log("Id", id);
+    console.log(apiData);
     setItem(item);
+    console.log(item);
     setColor(getColor(item.type));
-
   }, []);
 
   const displayImg = () => {
+    let images: Array<string> = item.image.split("~~");
 
-      let images:Array<string> = item.image.split("~~");
-      
-      return (
+    return (
       <ul>
-        { images.map((url) => {
-          if(images.length <= 1){
-            return <img className="img" src={url}/>
+        {images.map((url) => {
+          if (images.length <= 1) {
+            return <img className="img" src={url} />;
           } else {
-            return <img className="img-detail-pack" src={url}/>
+            return <img className="img-detail-pack" src={url} />;
           }
         })}
       </ul>
-      );
+    );
   };
 
   return (
