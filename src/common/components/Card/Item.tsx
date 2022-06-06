@@ -8,11 +8,11 @@ const Planets = (props: any) => {
       
       return (
       <ul className="img-container">
-        { images.map((url) => {
+        { images.map((url, index) => {
           if(images.length <= 1){
-            return <img className="img-card-normal" src={url}/>
+            return <img className="img-card-normal" key={index} src={url}/>
           } else {
-            return <img className="img-card-pack" src={url}/>
+            return <img className="img-card-pack" key={index} src={url}/>
           }
         })}
       </ul>

@@ -53,7 +53,7 @@ const createPacks = (array:Array<IData>) => {
 
         //ajout de l'article dans le pack
         pack.price += randomArticle.price;
-        pack.size += randomArticle.size;
+        pack.size += randomArticle.size ? randomArticle.size : 30;
         pack.name += randomArticle.name;
         pack.image += randomArticle.image;
         pack.description += randomArticle.type.slice(0,-1);
@@ -71,6 +71,7 @@ const createPacks = (array:Array<IData>) => {
  
       pack.id = totalArticles+(i);
       array.push(pack);
+      console.log(pack.size)
     }
 
     return array;
