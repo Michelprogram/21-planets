@@ -9,11 +9,13 @@ const PriceCard = ({ logo, price, title, elements, link }: IPriceCard) => {
 
     return (
       <ul className="logos">
-        {images.map((url) => {
+        {images.map((url, index) => {
           if (images.length <= 1) {
-            return <img className="logo-normal" src={url} />;
+
+            return <img className="logo-normal" key={index} src={url} />
           } else {
-            return <img className="logo-pack" src={url} />;
+            return <img className="logo-pack" key={index} src={url} />
+
           }
         })}
       </ul>
