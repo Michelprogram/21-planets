@@ -10,13 +10,29 @@ import {getColor} from "../../../constants/ColorPalette";
 const Articles = ({ id, name, price, image,type }: IData) => {
   const { remove } = usePanier();
 
+  const displayImg = () => {
+    let images:Array<string> = image.split("~~");
+    
+    return (
+    <ul className="icons">
+      { images.map((url) => {
+        if(images.length <= 1){
+          return <img className="icon" src={url}/>
+        } else {
+          return <img className="icon-pack" src={url}/>
+        }
+      })}
+    </ul>
+    );
+};
+
   const getBackgroundColor = () =>{
     return { backgroundColor: getColor(type) };
   } 
 
   return (
     <div className="container-article" style={getBackgroundColor()}>
-      <img src={image} alt="" className="icon" />
+      {displayImg()}
       <p className="name">{name}</p>
       <p className="amount">{ReadablePrice(price)} $</p>
       <Link to={"/detail/" + id}>
