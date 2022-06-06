@@ -22,6 +22,7 @@ import Vaporwave from "../assets/images/svg/vaporwave.svg";
 import Venus from "../assets/images/svg/venus.svg";
 import Waiting from "../assets/images/svg/waiting.svg";
 import Info from "../assets/images/svg/info.svg";
+import Plus from "../assets/images/svg/plus.svg";
 
 const svgIcones = [
   BlackHole,
@@ -59,6 +60,7 @@ export {
   NotFound,
   Waiting,
   Info,
+  Plus,
   //list
   svgIcones,
 };

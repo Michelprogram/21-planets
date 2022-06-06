@@ -19,10 +19,19 @@ const usePanier = () => {
     const index = elementsId.indexOf(article.id);
     if (index != -1) {
       panier[index].quantity++;
+      setPanier([...panier]);
     } else {
       article.quantity = 1;
       panier.push(article);
     }
+  };
+
+  const duplicate = (id: number): void => {
+    const elementsId: Array<number> = panier.map((el: IData) => el.id);
+    const index = elementsId.indexOf(id);
+
+    panier[index].quantity++;
+    setPanier([...panier]);
   };
 
   const removeArticles = (id: number): void => {
@@ -31,7 +40,7 @@ const usePanier = () => {
 
     if (panier[index].quantity > 1) {
       panier[index].quantity--;
-      //setPanier(panier);
+      setPanier([...panier]);
     } else {
       setPanier(panier.filter((el: IData) => el.id != id));
     }
@@ -62,6 +71,7 @@ const usePanier = () => {
 
       total += tempo;
     }
+
     return total;
   };
 
@@ -86,6 +96,7 @@ const usePanier = () => {
   return {
     panier: panier,
     setPanier,
+    duplicate,
     size: numberArticles,
     superficie: totalSize,
     dist: longDist,

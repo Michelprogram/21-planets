@@ -1,4 +1,4 @@
-import { Info, Trash } from "../../../constants/Images";
+import { Info, Plus, Trash } from "../../../constants/Images";
 
 import usePanier from "../../hooks/panier";
 
@@ -8,9 +8,8 @@ import { Link } from "react-router-dom";
 import { getColor } from "../../../constants/ColorPalette";
 import { useState } from "react";
 
-const Articles = ({ id, name, price, image, type, quantity }: IData) => {
-  const { remove, getQuantity } = usePanier();
-  const [q, setQ] = useState(quantity);
+const Articles = ({ id, name, price, image, type }: IData) => {
+  const { remove, getQuantity, duplicate } = usePanier();
 
   const displayImg = () => {
     let images: Array<string> = image.split("~~");
@@ -32,21 +31,17 @@ const Articles = ({ id, name, price, image, type, quantity }: IData) => {
     return { backgroundColor: getColor(type) };
   };
 
-  const removeItem = () => {
-    remove(id);
-    setQ(getQuantity(id));
-  };
-
   return (
     <div className="container-article" style={getBackgroundColor()}>
       {displayImg()}
       <p className="name">{name}</p>
       <p className="amount">{ReadablePrice(price)} $</p>
-      <p>x{q}</p>
+      <p>x{getQuantity(id)}</p>
       <Link to={"/detail/" + id}>
         <img className="icon-util" src={Info} />
       </Link>
-      <img className="icon-util" src={Trash} alt="" onClick={removeItem} />
+      <img className="icon-util" src={Trash} onClick={() => remove(id)} />
+      <img className="icon-util" src={Plus} onClick={() => duplicate(id)} />
     </div>
   );
 };
