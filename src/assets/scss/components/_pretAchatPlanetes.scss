@@ -12,6 +12,12 @@
     flex-direction: column;
     align-items: center;
 
+    .buttons{
+        display: flex;
+        width: 500px;
+        justify-content: space-evenly;
+    }
+
     p{
         font-style: italic;
     }
