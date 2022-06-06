@@ -1,9 +1,12 @@
 import { useContext, useState } from "react";
 import { DataContext } from "../../context/Data";
 import IData from "../../interfaces/IData";
+import { randomItemFromArray } from "../../utils/Random";
 
 const useData = () => {
-  const apiData = useContext(DataContext);
+  const apiData: Array<IData> = useContext(DataContext);
+
+  const [propositions, setPropositions] = useState<Array<IData>>([]);
 
   const length = (): number => {
     return apiData.length;
@@ -22,11 +25,33 @@ const useData = () => {
     return apiData.filter((el: IData) => el.type == type);
   };
 
+  const propositionsItem = (): Array<IData> => {
+    if (propositions.length > 0) {
+      return propositions;
+    }
+
+    const quantity = 4;
+    const items: Array<IData> = apiData;
+    const result: Array<IData> = [];
+
+    for (let index = 0; index < quantity; index++) {
+      const element = randomItemFromArray(items);
+      const indexItems = items.indexOf(element);
+      items.splice(indexItems, 1);
+      result.push(element);
+    }
+
+    setPropositions(result);
+
+    return result;
+  };
+
   return {
     apiData,
     length,
     getById,
     filterByType,
+    propositionsItem,
   };
 };
 

@@ -4,15 +4,14 @@ import { Link } from "react-router-dom";
 import useData from "../common/hooks/Data";
 import usePanier from "../common/hooks/panier";
 import IData from "../interfaces/IData";
-import ITitle from "../interfaces/ITitle";
 import { ReadablePrice } from "../utils/String";
-import { Navigate } from "react-router-dom";
-import {getColor} from "../constants/ColorPalette";
+import { getColor } from "../constants/ColorPalette";
 
 const Detail = () => {
   const [buttonText, setButtonText] = useState("Ajouter au panier");
   const [id, setId] = useState<number>(parseInt(useParams().productId!));
-  const [color,setColor] = useState<string>("");
+
+  const [color, setColor] = useState<string>("");
 
   const [item, setItem] = useState<IData>({
     id: 0,
@@ -33,21 +32,15 @@ const Detail = () => {
     setButtonText("Article ajouté !");
   };
 
+  const getBackgroundColor = () => {
+    return { backgroundColor: color };
+  };
+
   useEffect(() => {
     const item: IData = getById(id);
-
-    /*    if (item == undefined) {
-      <Navigate to={"*"} />;
-    } */
-
     setItem(item);
     setColor(getColor(item.type));
   }, []);
-
-
- const getBackgroundColor = () =>{
-      return { backgroundColor: color };
-  } 
 
   return (
     <div className="description-container shop-description">
