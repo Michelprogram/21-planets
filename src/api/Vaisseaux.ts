@@ -1,4 +1,5 @@
 import { rockets } from "../constants/FlatIcons";
+import { MILLION } from "../constants/Price";
 import IVaisseau from "../interfaces/IVaisseau";
 import fetchApi from "../utils/Api";
 import { randomItemFromArray, randomNotFloor } from "../utils/Random";
@@ -14,7 +15,7 @@ const fetchVaisseaux = async (): Promise<IVaisseau[]> => {
     el.name = el.mission_name;
     el.size = randomNotFloor(500, 600);
     el.description = el.details;
-    el.price = randomNotFloor(500000, 600000);
+    el.price = randomNotFloor(MILLION * 100, MILLION * 300);
     el.image =
       el.links.flickr_images.length == 0
         ? randomItemFromArray(rockets)
