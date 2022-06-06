@@ -7,4 +7,5 @@ export default interface IData {
   image: string;
   distance_from_earth: number;
   type: string;
+  quantity?: number;
 }
