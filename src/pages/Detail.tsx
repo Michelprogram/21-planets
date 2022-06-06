@@ -40,12 +40,30 @@ const Detail = () => {
     const item: IData = getById(id);
     setItem(item);
     setColor(getColor(item.type));
+
   }, []);
+
+  const displayImg = () => {
+
+      let images:Array<string> = item.image.split("~~");
+      
+      return (
+      <ul>
+        { images.map((url) => {
+          if(images.length <= 1){
+            return <img className="img" src={url}/>
+          } else {
+            return <img className="img-detail-pack" src={url}/>
+          }
+        })}
+      </ul>
+      );
+  };
 
   return (
     <div className="description-container shop-description">
       <div className="img-container" style={getBackgroundColor()}>
-        <img src={item.image} className="img" />
+        {displayImg()}
       </div>
 
       <div className="description">

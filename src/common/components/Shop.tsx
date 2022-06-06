@@ -23,9 +23,12 @@ const Shop = ({ title }: any) => {
 
   return (
     <div className="container-shop-items">
-      {filterByType(title).map((el: IData, index: number) => {
+      { 
+      filterByType(title).map((el: IData, index: number) => {
         return <Item key={index} name={el.name} image={el.image} color={getColor(title)} id={el.id} />;
-      })}
+      })
+      
+      }
     </div>
   );
 };

@@ -1,14 +1,19 @@
 import axios from "axios";
-import IAsteroide from "../interfaces/IAsteroide";
-import { randomItemFromArray, randomNotFloor } from "../utils/Random";
+import { random, randomItemFromArray, randomNotFloor } from "../utils/Random";
 import { cometes } from "../constants/FlatIcons";
 import { THOUSAND } from "../constants/Price";
+import { svgIcones as PlanetsSVG } from "../constants/Images";
+import IData from "../interfaces/IData";
 
 const URI: string =
   "https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=eePZohcvQm8fLcAsRVmgOUZdYbwxGTGa6YbS4oaG";
-let data: Array<IAsteroide> = [];
+let data: Array<IData> = [];
 
-const fetchAsteroides = async () => {
+const randomIcon = (): string => {
+  return PlanetsSVG[random(0, PlanetsSVG.length)];
+};
+
+const fetchAsteroides = async ():Promise<IData[]> => {
   if (data.length > 0) return data;
   data = [];
 
@@ -22,7 +27,7 @@ const fetchAsteroides = async () => {
       data.push(el);
     });
 
-    data.forEach((el) => {
+    data.forEach((el:any) => {
       el.size = el.estimated_diameter.kilometers.estimated_diameter_max;
       el.description = el.orbital_data.orbit_class.orbit_class_description;
       el.price = randomNotFloor(THOUSAND * 10, THOUSAND * 50);

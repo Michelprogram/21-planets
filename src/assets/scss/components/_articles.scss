@@ -8,9 +8,20 @@
   height: 58px;
   border-radius: 90px;
   width: 90%;
+
+  .icons{
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
   .icon {
     width: 40px;
     height: 40px;
+  }
+
+  .icon-pack{
+    width:25px;
+    height: 25px;
   }
 
   a {

@@ -51,11 +51,11 @@ const Panier = ({ className = "" }) => {
           <div className="container-inside">
             <p className="title">Statistique</p>
             <p className="superficie">
-              Size total : <span>{ReadablePrice(superficie())}</span>
+              Taille totale : <span>{ReadablePrice(superficie())} km3</span>
             </p>
             <p className="far">
               Planete la plus loin :{" "}
-              <span>{size() > 1 ? longest().name : ""}</span>
+              <span>{size() > 0 ? longest().name : ""}</span>
             </p>
             <p className="dist">
               Distance la plus loin : <span>{ReadablePrice(dist())} km</span>

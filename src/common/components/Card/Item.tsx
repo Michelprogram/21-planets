@@ -4,7 +4,19 @@ import { Link } from "react-router-dom";
 const Planets = (props: any) => {
   const displayImg = () => {
     if (props.image) {
-      return <img className="img-card" src={props.image} alt="" />;
+      let images:Array<string> = props.image.split("~~");
+      
+      return (
+      <ul className="img-container">
+        { images.map((url) => {
+          if(images.length <= 1){
+            return <img className="img-card-normal" src={url}/>
+          } else {
+            return <img className="img-card-pack" src={url}/>
+          }
+        })}
+      </ul>
+      );
     }
     return (
       <div>
