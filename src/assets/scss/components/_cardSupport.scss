@@ -1,0 +1,25 @@
+.question-card {
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 1.3em;
+  height: 80px;
+  justify-content: space-around;
+
+  transition: box-shadow 0.5s ease-in;
+
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 8px 5px 1px black;
+  }
+
+  p {
+    width: 50%;
+  }
+
+  img {
+    width: 60px;
+  }
+}
