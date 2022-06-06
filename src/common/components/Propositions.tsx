@@ -24,7 +24,7 @@ const Propositions = ({ className = "" }) => {
         et l'espace sont un modèle de réflexion.” - Gaspard
       </p>
       <div className="best-propositions">
-        {propositionsItem().map((el: IData, index: number) => {
+        {propositionsItem(4).map((el: IData, index: number) => {
           return (
             <Item
               key={index}
