@@ -1,17 +1,12 @@
 import axios from "axios";
 import IAsteroide from "../interfaces/IAsteroide";
-import { svgIcones as PlanetsSVG } from "../constants/Images";
-import { random, randomItemFromArray, randomNotFloor } from "../utils/Random";
+import { randomItemFromArray, randomNotFloor } from "../utils/Random";
 import { cometes } from "../constants/FlatIcons";
+import { THOUSAND } from "../constants/Price";
 
-const color: string = "#713cf7";
 const URI: string =
   "https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=eePZohcvQm8fLcAsRVmgOUZdYbwxGTGa6YbS4oaG";
 let data: Array<IAsteroide> = [];
-
-const randomIcon = (): string => {
-  return PlanetsSVG[random(0, PlanetsSVG.length)];
-};
 
 const fetchAsteroides = async () => {
   if (data.length > 0) return data;
@@ -30,7 +25,7 @@ const fetchAsteroides = async () => {
     data.forEach((el) => {
       el.size = el.estimated_diameter.kilometers.estimated_diameter_max;
       el.description = el.orbital_data.orbit_class.orbit_class_description;
-      el.price = randomNotFloor(10000, 50000);
+      el.price = randomNotFloor(THOUSAND * 10, THOUSAND * 50);
       el.distance_from_earth = parseInt(
         el.close_approach_data[1].miss_distance.kilometers
       );
