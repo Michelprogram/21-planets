@@ -1,7 +1,7 @@
 @use "../variables/colors" as color;
 
 $colors-balls: color.$purple, color.$green-light, color.$blue-light,
-  color.$pink-dark, color.$gray, color.$dark-blue;
+  color.$pink-dark, color.$gray, color.$blue-light-3;
 
 .container-header {
   height: 410px;

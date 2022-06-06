@@ -3,16 +3,9 @@ import { Waiting } from "../../constants/Images";
 import useData from "../hooks/Data";
 import IData from "../../interfaces/IData";
 import {getColor} from "../../constants/ColorPalette";
-import { useEffect } from "react";
 
 const Shop = ({ title }: any) => {
-  const { apiData, filterByType, createPacks } = useData();
-
-  useEffect(()=>{
-    if(apiData != undefined){
-      createPacks();
-    }
-  });
+  const { apiData, filterByType } = useData();
 
   if (!apiData) {
     return (
@@ -30,14 +23,7 @@ const Shop = ({ title }: any) => {
 
   return (
     <div className="container-shop-items">
-      { title === "packs" ? 
-
-      createPacks().map((el: IData, index: number) => {
-        return <Item key={index} name={el.name} image={el.image} color={getColor(title)} id={el.id} />;
-      })
-      
-      :
-
+      { 
       filterByType(title).map((el: IData, index: number) => {
         return <Item key={index} name={el.name} image={el.image} color={getColor(title)} id={el.id} />;
       })

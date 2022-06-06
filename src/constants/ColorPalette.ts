@@ -6,7 +6,7 @@ const categories:Array<ITitle> = [
     {title:"vaisseaux", color:"#50bec2"},
     {title:"packs", color:"#d6748a"},
     {title:"cometes", color:"#adbdbb"},
-    {title:"etoiles", color:"#1d2a47"}
+    {title:"etoiles", color:"#3c52f2"}
 ] 
 
 const getColor = (title:string):string => {

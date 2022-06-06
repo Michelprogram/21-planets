@@ -5,6 +5,7 @@ import fetchEtoiles from "../api/Etoiles";
 import fetchExoplanete from "../api/Exoplanete";
 import fetchVaisseaux from "../api/Vaisseaux";
 import IData from "../interfaces/IData";
+import { random } from "../utils/Random";
 
 const initData = async (): Promise<any[]> => {
   const exoplanetes = await fetchExoplanete();
@@ -20,8 +21,56 @@ const initData = async (): Promise<any[]> => {
     }
   );
 
+  createPacks(array);
+
   return array;
 };
+
+const createPacks = (array:Array<IData>) => {
+  const articlesParPack = 3;
+  const nbPacks = 20;
+
+    let randomIndexes: Array<number> = [];
+    let randomIndex: number;
+    let totalArticles = array.length;
+    let randomArticles: Array<IData> = [];
+    let pack:IData;
+
+    //choix des articles
+    for (let i = 0; i < nbPacks; i++) {
+
+      //initialisation du pack
+      pack = {id: 0, size: 0, name: "", description: "", price: 0, image: "", distance_from_earth: 0, type: "packs"}
+
+      //remplissage du pack
+      for (let j = 0; j < articlesParPack; j++) {
+        do {
+          randomIndex = random(0, totalArticles);
+        } while (randomIndexes.includes(randomIndex))
+
+        //récupération d'un article
+        randomIndexes.push(randomIndex);
+        let randomArticle = array[randomIndex];
+
+        //ajout de l'article dans le pack
+        pack.price += randomArticle.price;
+        pack.size += randomArticle.size;
+        pack.name += randomArticle.name;
+        pack.image += randomArticle.image;
+        pack.distance_from_earth += randomArticle.distance_from_earth;
+        if (j !== (articlesParPack-1)) {
+          pack.name += " & "
+          pack.image += "~~"
+        }
+      }
+ 
+      pack.id = totalArticles+(i);
+      randomArticles.push(pack);
+      array.push(pack);
+    }
+
+    return array;
+}
 
 export const DataContext = createContext<any>({});
 
