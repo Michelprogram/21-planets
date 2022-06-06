@@ -57,9 +57,15 @@ const createPacks = (array:Array<IData>) => {
         pack.size += randomArticle.size;
         pack.name += randomArticle.name;
         pack.image += randomArticle.image;
-        pack.distance_from_earth += randomArticle.distance_from_earth;
+        pack.description += randomArticle.type;
+
+        if(randomArticle.distance_from_earth > pack.distance_from_earth){
+          pack.distance_from_earth += randomArticle.distance_from_earth;
+        }
+
         if (j !== (articlesParPack-1)) {
           pack.name += " & "
+          pack.description += " + "
           pack.image += "~~"
         }
       }
