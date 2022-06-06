@@ -15,18 +15,18 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollTop />
-      <DataProvider>
-        <PanierProvider>
-          <Header />
-          <UserProvider value="">
+      <UserProvider value="">
+        <DataProvider>
+          <PanierProvider>
+            <Header />
             <Routes>
               {DefaultRoute}
               {CategoriesRoute}
             </Routes>
-          </UserProvider>
-          <Footer />
-        </PanierProvider>
-      </DataProvider>
+            <Footer />
+          </PanierProvider>
+        </DataProvider>
+      </UserProvider>
     </BrowserRouter>
   );
 }

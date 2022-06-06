@@ -71,7 +71,6 @@ const createPacks = (array:Array<IData>) => {
  
       pack.id = totalArticles+(i);
       array.push(pack);
-      console.log(pack.size)
     }
 
     return array;

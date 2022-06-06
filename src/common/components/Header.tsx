@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { svgIcones as PlanetsSVG } from "../../constants/Images";
+import { useUser } from "../../context/UserContext";
 import { random } from "../../utils/Random";
 import usePanier from "../hooks/panier";
+
 const Header = () => {
   const { size } = usePanier();
+  const user: string = useUser();
 
   const location = useLocation();
 
@@ -17,6 +20,7 @@ const Header = () => {
     }
   };
 
+  //panier
   const displayPanier = () => {
     if (size() >= 1) {
       return (
@@ -36,6 +40,19 @@ const Header = () => {
     }
   };
 
+  //login
+  const displayLogin = () => {
+    return (user != "" ?
+      <li className="user-icon">
+        <p>{user.charAt(0).toUpperCase()}</p>
+      </li>
+      :
+      <li>
+        Login <span className={iconOnLocation("login")}>🔥</span>
+      </li>
+    );
+  };
+
   const iconOnLocation = (expected: string): string => {
     return "/" + expected == location.pathname ? "icons-active" : "icons";
   };
@@ -46,9 +63,7 @@ const Header = () => {
     <div className="container-header">
       <div className="navigation">
         <NavLink to={"/login"} className="links">
-          <li>
-            Login <span className={iconOnLocation("login")}>🔥</span>
-          </li>
+          {displayLogin()}
         </NavLink>
 
         <NavLink to={"/panier"} className="links">

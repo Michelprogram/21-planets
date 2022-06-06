@@ -2,7 +2,7 @@ import { Form, Input } from "antd";
 import { useState } from "react";
 import IFormulaire from "../../interfaces/IFormulaire";
 import ButtonXL from "./Button/ButtonXL";
-import { useUpdateUser } from "../../context/UserContext";
+import { useUpdateUser, useUser } from "../../context/UserContext";
 
 const Formulaire = ({
   titre,
@@ -44,6 +44,7 @@ const Formulaire = ({
         setErrorMsgVisible(true);
       }
     }
+
   };
 
   return (
