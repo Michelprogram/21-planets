@@ -1,12 +1,10 @@
 import setClassName from '../../utils/ClassName';
 import PriceCard from './Card/PriceCard';
-import { RedGiant, Saturn, BlackHole } from "../../constants/Images";
 import useData from '../hooks/Data';
 import { useNavigate } from 'react-router-dom';
 import IData from '../../interfaces/IData';
 import { randomItemFromArray } from '../../utils/Random';
 import { etoiles } from '../../constants/FlatIcons';
-import { MILLION } from '../../constants/Price';
 
 const PrixAttractifs = ({ className = '' }) => {
     const { apiData, propositionsItem } = useData();

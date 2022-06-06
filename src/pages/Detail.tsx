@@ -49,11 +49,11 @@ const Detail = () => {
       
       return (
       <ul>
-        { images.map((url) => {
+        { images.map((url,index) => {
           if(images.length <= 1){
-            return <img className="img" src={url}/>
+            return <img className="img" key={index} src={url}/>
           } else {
-            return <img className="img-detail-pack" src={url}/>
+            return <img className="img-detail-pack" key={index} src={url}/>
           }
         })}
       </ul>
