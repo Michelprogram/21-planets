@@ -27,7 +27,7 @@ const PrixAttractifs = ({ className = '' }) => {
             <div className='price_cards'>
                 {propositionsItem(2, "packs").map((el: IData, index: number) => {
                     return (
-                        <PriceCard key={index} title="Le pack interstellaire" price={el.price + " $"} logo={el.image} elements={el.name.split("&")} link={"/categories/" + el.type} />
+                        <PriceCard key={index} title="Le pack interstellaire" price={el.price + " $"} logo={el.image} elements={el.name.split("&")} link={"/detail/" + el.id} />
                     );
                 })}
 
