@@ -1,6 +1,14 @@
 import React, { useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { svgIcones as PlanetsSVG } from "../../constants/Images";
+import {
+  Droplet,
+  Earth,
+  Gift,
+  Meteore,
+  Rocket,
+  Star,
+  svgIcones as PlanetsSVG,
+} from "../../constants/Images";
 import { useUser } from "../../context/UserContext";
 import { random } from "../../utils/Random";
 import usePanier from "../hooks/panier";
@@ -42,11 +50,11 @@ const Header = () => {
 
   //login
   const displayLogin = () => {
-    return (user != "" ?
+    return user != "" ? (
       <li className="user-icon">
         <p>{user.charAt(0).toUpperCase()}</p>
       </li>
-      :
+    ) : (
       <li>
         Login <span className={iconOnLocation("login")}>🔥</span>
       </li>
@@ -101,32 +109,44 @@ const Header = () => {
 
       <div className="container-balls">
         <NavLink to={"/categories/asteroides"}>
-          <div className="ball-1 ball"></div>
+          <div className="ball-1 ball">
+            <img src={Meteore} />
+          </div>
           <p className="description-1 description">Asteroides</p>
         </NavLink>
 
         <NavLink to={"/categories/exoplanetes"}>
-          <div className="ball-2 ball"></div>
+          <div className="ball-2 ball">
+            <img src={Earth} />
+          </div>
           <p className="description-2 description">Exoplanetes</p>
         </NavLink>
 
         <NavLink to={"/categories/vaisseaux"}>
-          <div className="ball-3 ball"></div>
+          <div className="ball-3 ball">
+            <img src={Rocket} />
+          </div>
           <p className="description-3 description">Vaisseaux</p>
         </NavLink>
 
         <NavLink to={"/categories/packs"}>
-          <div className="ball-4 ball"></div>
+          <div className="ball-4 ball">
+            <img src={Gift} />
+          </div>
           <p className="description-4 description">Packs</p>
         </NavLink>
 
         <NavLink to={"/categories/cometes"}>
-          <div className="ball-5 ball"></div>
+          <div className="ball-5 ball">
+            <img src={Droplet} />
+          </div>
           <p className="description-5 description">Cometes</p>
         </NavLink>
 
         <NavLink to={"/categories/etoiles"}>
-          <div className="ball-6 ball"></div>
+          <div className="ball-6 ball">
+            <img src={Star} />
+          </div>
           <p className="description-6 description">Etoiles</p>
         </NavLink>
       </div>

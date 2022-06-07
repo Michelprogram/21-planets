@@ -60,7 +60,7 @@ $colors-balls: color.$purple, color.$green-light, color.$blue-light,
         }
       }
 
-      .user-icon{
+      .user-icon {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -68,7 +68,7 @@ $colors-balls: color.$purple, color.$green-light, color.$blue-light,
         height: 50px;
         background-color: color.$blue-light-2;
         border-radius: 50px;
-        
+
         font-size: x-large;
       }
 
@@ -121,8 +121,17 @@ $colors-balls: color.$purple, color.$green-light, color.$blue-light,
         border-radius: 50px;
         cursor: pointer;
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         transition: all 0.5s ease-in;
+
+        img {
+          width: 30px;
+          opacity: 0.9;
+          transition: opacity 0.5s ease-in-out;
+        }
       }
 
       .description {
@@ -132,6 +141,10 @@ $colors-balls: color.$purple, color.$green-light, color.$blue-light,
 
       &:hover > .description {
         opacity: 1;
+      }
+
+      &:hover > .ball > img {
+        opacity: 0;
       }
 
       @for $index from 1 to length($colors-balls) + 1 {

@@ -23,6 +23,12 @@ import Venus from "../assets/images/svg/venus.svg";
 import Waiting from "../assets/images/svg/waiting.svg";
 import Info from "../assets/images/svg/info.svg";
 import Plus from "../assets/images/svg/plus.svg";
+import Meteore from "../assets/images/svg/meteore.svg";
+import Rocket from "../assets/images/svg/rocket.svg";
+import Gift from "../assets/images/svg/gift.svg";
+import Star from "../assets/images/svg/star.svg";
+import Earth from "../assets/images/svg/earth.svg";
+import Droplet from "../assets/images/svg/droplet.svg";
 
 const svgIcones = [
   BlackHole,
@@ -61,6 +67,12 @@ export {
   Waiting,
   Info,
   Plus,
+  Meteore,
+  Rocket,
+  Gift,
+  Star,
+  Earth,
+  Droplet,
   //list
   svgIcones,
 };
