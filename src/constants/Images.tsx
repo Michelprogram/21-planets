@@ -43,6 +43,8 @@ const svgIcones = [
   Venus,
 ];
 
+const iconsBalls = [Meteore, Earth, Rocket, Gift, Droplet, Star];
+
 export {
   //Webp
   Asteroid,
@@ -75,4 +77,5 @@ export {
   Droplet,
   //list
   svgIcones,
+  iconsBalls,
 };

@@ -14,7 +14,12 @@ export default [
           path={cat.title}
           key={index}
           element={
-            <Categories key={index} title={cat.title} color={cat.color} />
+            <Categories
+              key={index}
+              title={cat.title}
+              color={cat.color}
+              icons={cat.icons}
+            />
           }
         />
       );
