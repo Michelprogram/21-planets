@@ -1,6 +1,6 @@
 @use "../variables/colors" as color;
 
-.container-shop-items-search-bar {
+.container-shop {
   background-color: color.$gray2;
 
   .container-input {
@@ -44,14 +44,17 @@
     & > * {
       margin: 50px 0;
     }
+  }
+}
 
+.waiting-container {
+  .container-shop-items {
+    background-color: color.$gray2;
     .waiting-container {
       text-align: center;
       font-size: 2em;
-      margin-top: 3%;
       img {
-        width: 55%;
-        margin-bottom: 5%;
+        width: 30%;
       }
     }
   }

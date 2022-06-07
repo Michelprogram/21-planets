@@ -43,20 +43,22 @@ const Shop = ({ title, icons, color }: ITitle) => {
 
   if (!apiData) {
     return (
-      <div className="container-shop-items">
-        {" "}
-        <div className="waiting-container">
-          <img src={Waiting} alt="" />
-          <p>
-            Patientez pendant que nous cherchons vos données à travers le cosmos
-          </p>
+      <div className="waiting-container">
+        <div className="container-shop-items">
+          <div className="waiting-container">
+            <img src={Waiting} alt="" />
+            <p>
+              Patientez pendant que nous cherchons vos données à travers le
+              cosmos
+            </p>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="container-shop-items-search-bar">
+    <div className="container-shop">
       <div className="container-input">
         <input
           type="text"
