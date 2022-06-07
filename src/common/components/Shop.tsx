@@ -4,8 +4,9 @@ import useData from "../hooks/Data";
 import IData from "../../interfaces/IData";
 import { getColor } from "../../constants/ColorPalette";
 import { useState } from "react";
+import ITitle from "../../interfaces/ITitle";
 
-const Shop = ({ title }: any) => {
+const Shop = ({ title, icons, color }: ITitle) => {
   const { apiData, filterByType } = useData();
   const [search, setSearch] = useState<string>("");
 
@@ -33,6 +34,13 @@ const Shop = ({ title }: any) => {
       });
   };
 
+  const styleInput = () => {
+    return {
+      borderColor: color,
+      color: color,
+    };
+  };
+
   if (!apiData) {
     return (
       <div className="container-shop-items">
@@ -48,8 +56,20 @@ const Shop = ({ title }: any) => {
   }
 
   return (
-    <div>
-      <input type="text" onChange={inputHandler} />
+    <div className="container-shop-items-search-bar">
+      <div className="container-input">
+        <input
+          type="text"
+          className="search-bar"
+          placeholder={"Search for " + title}
+          onChange={inputHandler}
+          style={styleInput()}
+        />
+        <div style={{ backgroundColor: color }}>
+          <img src={icons} alt="" />
+        </div>
+      </div>
+
       <div className="container-shop-items">{filterData()}</div>
     </div>
   );

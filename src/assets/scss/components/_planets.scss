@@ -34,7 +34,7 @@
       background-color: color.$blue-light;
     }
 
-    .img-container{
+    .img-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
@@ -48,7 +48,7 @@
         border-radius: 20px;
       }
 
-      .img-card-pack{
+      .img-card-pack {
         object-fit: contain;
         width: 40%;
         aspect-ratio: 1/1;
