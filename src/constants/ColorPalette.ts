@@ -4,7 +4,7 @@ import { iconsBalls } from "./Images";
 
 const categories: Array<ITitle> = [
   { title: "asteroides", color: "#713cf7", icons: iconsBalls[0] },
-  { title: "exoplanetes", color: "#49fa95", icons: iconsBalls[1] },
+  { title: "exoplanetes", color: "#466365", icons: iconsBalls[1] },
   { title: "vaisseaux", color: "#50bec2", icons: iconsBalls[2] },
   { title: "packs", color: "#d6748a", icons: iconsBalls[3] },
   { title: "cometes", color: "#adbdbb", icons: iconsBalls[4] },
