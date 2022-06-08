@@ -8,7 +8,7 @@ const ReadablePrice = (str: string | number): string => {
   if (str == "") return "0";
 
   if (typeof str == "number") {
-    str = str + "";
+    str = str.toFixed(2);
   }
 
   if (str.includes(".")) {

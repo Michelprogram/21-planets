@@ -38,11 +38,7 @@ const Detail = () => {
 
   useEffect(() => {
     const item: IData = getById(id);
-    console.log("Get by id", item);
-    console.log("Id", id);
-    console.log(apiData);
     setItem(item);
-    console.log(item);
     setColor(getColor(item.type));
   }, []);
 
@@ -51,13 +47,11 @@ const Detail = () => {
 
     return (
       <ul>
-
-        { images.map((url,index) => {
-          if(images.length <= 1){
-            return <img className="img" key={index} src={url}/>
+        {images.map((url, index) => {
+          if (images.length <= 1) {
+            return <img className="img" key={index} src={url} />;
           } else {
-            return <img className="img-detail-pack" key={index} src={url}/>
-
+            return <img className="img-detail-pack" key={index} src={url} />;
           }
         })}
       </ul>
@@ -82,8 +76,7 @@ const Detail = () => {
               Taille : <p>{ReadablePrice(item.size)} km</p>
             </li>
             <li>
-              Distance de la Terre :{" "}
-              <p>{ReadablePrice(item.distance_from_earth)} km</p>
+              Distance : <p>{ReadablePrice(item.distance_from_earth)} km</p>
             </li>
           </ul>
         </div>

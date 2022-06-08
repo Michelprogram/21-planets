@@ -26,16 +26,12 @@ const useData = () => {
   };
 
   const propositionsItem = (quantity: number, type?: string): Array<IData> => {
-    if (propositions.length > 0) {
-      return propositions;
-    }
-
     let items: Array<IData>;
 
     if (type) {
       items = filterByType(type);
     } else {
-      items = apiData;
+      items = [...apiData];
     }
     const result: Array<IData> = [];
 
@@ -45,8 +41,6 @@ const useData = () => {
       items.splice(indexItems, 1);
       result.push(element);
     }
-
-    setPropositions(result);
 
     return result;
   };

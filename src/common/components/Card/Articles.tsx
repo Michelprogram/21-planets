@@ -31,10 +31,19 @@ const Articles = ({ id, name, price, image, type }: IData) => {
     return { backgroundColor: getColor(type) };
   };
 
+  const displayName = (): string => {
+    if (name.length > 10) {
+      return name.slice(0, 10) + " ...";
+    }
+    return name;
+  };
+
   return (
     <div className="container-article" style={getBackgroundColor()}>
       {displayImg()}
-      <p className="name">{name}</p>
+      <p className="name" title={name}>
+        {displayName()}
+      </p>
       <p className="amount">{ReadablePrice(price)} $</p>
       <p>x{getQuantity(id)}</p>
       <Link to={"/detail/" + id}>

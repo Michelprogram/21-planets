@@ -1,5 +1,5 @@
 import Item from "./Card/Item";
-import { Waiting } from "../../constants/Images";
+import Waiting from "./Waiting";
 import useData from "../hooks/Data";
 import IData from "../../interfaces/IData";
 import { getColor } from "../../constants/ColorPalette";
@@ -42,19 +42,7 @@ const Shop = ({ title, icons, color }: ITitle) => {
   };
 
   if (!apiData) {
-    return (
-      <div className="waiting-container">
-        <div className="container-shop-items">
-          <div className="waiting-container">
-            <img src={Waiting} alt="" />
-            <p>
-              Patientez pendant que nous cherchons vos données à travers le
-              cosmos
-            </p>
-          </div>
-        </div>
-      </div>
-    );
+    return <Waiting />;
   }
 
   return (
